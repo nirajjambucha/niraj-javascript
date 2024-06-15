@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+        /* **********( increment ( ➕ )  /  decrement ( ➖ ) )********** */
+
+
+    .container{
+        font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        display: flex;
+        align-items: center;
+    }
+    .container .counter{
+        padding: 20px;
+        margin: 20px 0px 10px 70px;
+        border-radius: 10px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    .container .counter input{
+      text-align: center;
+      margin-left: 15px;
+      font-size: 80px;
+      width: 200px;
+      font-weight: bold;
+      border: 0;
+    } 
+    .container .buttons{
+        margin-top: 20px;
+    }
+    .container .buttons button{
+        font-size: 20px;
+        padding: 10px 15px;
+        margin: 10px;
+        cursor: pointer;
+        border: none;
+    }
+    .container .buttons button#sub{
+        background-color: orangered;
+        color: #ffff;
+    }
+    .container .buttons button#add{
+        background-color: green;
+        color: #ffff;
+    }
+
+   /* **********calculator********** */
+
+    #formstyle{
+            width:250px;
+            height: 400px;
+            background-color: lightgrey;
+            text-align: center;
+            border: 2px solid black;
+            margin: 20px 0px 10px 70px;
+            border-radius: 30px;
+        }
+        #calc{
+            width: 176px;
+            height: 45px;
+            margin: 20px 0px 0px 0px ;
+            border: 1px solid black;
+            padding: 0px 0px 0px 30px;
+            border-radius: 5px;
+        }
+        .cal{
+            width:50px;
+            height: 40px;
+            padding: 15px;
+            border: 0px;
+            box-shadow: 5px 5px 5px grey;
+            border-radius:5px;
+            font-size: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+        #clear{
+            width: 208px;
+            height: 45px;
+            background-color: grey;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .inp{
+            width: 222px;
+            height: 33px;
+            border: 1px solid black;
+            padding: 0px 0px 0px 30px;
+            border-radius: 5px; 
+        }
+        .butt{
+            width: 80px;
+            height: 33px;
+            border-radius: 5px; 
+            border: 1px solid black;
+            background-color: black;
+            cursor: pointer;
+            color: white;
+        }
+
+        /*  lamp of / on */
+        .lamp{
+            width: 60px;
+            height: 30px;
+            border-radius: 5px;
+            border: 2px solid black;
+            font-weight: bold;
+            color: white;
+            font-size: 15px;
+            background-color: green;
+        }
+        .lamp-color{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h2><li>result 📑</li></h2>
+    <input type="text" id="new" class="inp">
+    <button onclick="myroom()" class="butt">submit</button>
+    <p id="demo"></p>
+    <script>
+    function myroom(){
+
+            let x = document.getElementById("new").value;
+            let y
+            if((x >= 91) && (x <= 100)){
+                y = "Outstanding performance in exam - A1 pass🤑";
+            }else if((x >= 81) && (x <= 90)){
+                y = " very Good performance in exam - A2 pass😃";
+            }else if((x >= 71) && (x <= 80)){
+                y = "Good performance in exam - B1 pass😊";
+            }else if((x >= 50) && (x <= 70)){1
+                y = "Work a little harder - B2 pass😧 ";
+            }else if((x >= 33) && (x <= 49)){
+                y = "'try agin in better performance - C pass🙁'";
+            }else if((x >= 1) && (x <= 32)){
+                y = "'you are fali in exam - f 😭'";
+            }else {
+                y = "'plese chek your deta  ❌'";
+            }
+            document.getElementById("demo").innerHTML = y;
+    }
+    </script>
+    <br><hr>
+
+
+    <h2><li>have good time 🥰</li></h2>
+    <input type="text" id="sita" class="inp">
+    <button onclick="sita()" class="butt">submit</button>
+    <p id="good day"></p>
+    <script>
+        function sita(){ 
+                 let v = document.getElementById("sita").value;
+                 let v1 = " ";
+                 if ((v >= 7) && (v <= 12 )){
+                     v1 = "good morning  ⛺"
+                 }
+                 else if ((v >= 1) && (v <= 4)){
+                     v1 = "good afternoon 🌄";
+                 }
+                 else if ((v >= 5) && (v <= 6)){
+                     v1 = "good evening 🌄";
+                 }
+                 else {
+                     v1 = " this time is unvelid plese chek your data ❌";
+                 }
+                 document.getElementById("good day").innerHTML = v1;
+        }
+    </script>
+    <br><hr>
+
+
+    <h2><li>( increment ( ➕ )  /  decrement ( ➖ ) )</li></h2>
+    <div class="container">
+        <div class="counter">
+            <input type="text" value="0" id="add" >
+            <div class="buttons">
+                <button onclick="decrement()" id="sub"><i class="fa fa-minus"></i></button>
+                <button id="reset" onclick="null1()">Reset</i></button>
+                <button onclick="increment()" id="add"><i class="fa fa-plus"></i></button>
+            </div> 
+        </div>  
+    </div>
+    <script> 
+        function increment(){
+            var value = document.getElementById("add").value;
+            value ++;
+            document.getElementById("add").value = value;
+        }
+
+        function decrement(){
+            var value = document.getElementById("add").value;
+            // value < 1 ? value = 1 : " " ;
+            value --;
+            document.getElementById("add").value = value;
+        }
+
+        function null1(){
+            var value = document.getElementById("add").value;
+            value = 0;
+            document.getElementById("add").value = value;
+        }
+    </script>
+    <br><hr>
+   
+
+    <h2><li>while lop in dynemic</li></h2>
+    <p id="while"></p>
+    <input type="text" id="while1" class="inp">
+    <button onclick="mywhile()" class="butt">submit</button>
+    <script>
+          function mywhile(){
+          let d = document.getElementById("while1").value;
+          let abc = " ";
+          while(d <= 100){
+              abc += "my number is :-" + d + "<br>";
+              d++;
+          }
+         document.getElementById("while").innerHTML = abc;
+          }
+    </script>
+    <br><hr>
+
+
+     <h2><li>do lop in dynemic</li></h2>
+     <p id="do"></p>
+     <input type="text" id="do1" class="inp">
+     <button onclick="mydo()" class="butt">submit</button>
+     <script>
+      function mydo(){
+          let d1 = document.getElementById("do1").value;
+          let text3 = " ";
+          do{
+              text3 += "my number is :-" + d1 + "<br>";
+              d1++;
+          }while(d1 <= 100);
+          document.getElementById("do").innerHTML = text3;
+      }
+     </script>
+     <br><hr>
+
+
+     <h2><li>petarn  start (top) (*) </li></h2>
+     <input type="text" id="ram" class="inp">
+     <button onclick="ram()" class="butt">submit</button>
+     <p id="sita1"></p>
+     <script>
+         function ram(){
+                  let v = document.getElementById("ram").value;
+                  let n = " ";
+                  for($a = 1; $a <= v; $a++){
+                     // n += "*  *  *  *  *" ;
+                  for($b = 1; $b <= $a; $b++){
+                     
+                    n += " 😎 ";
+                    
+                 }
+                    n += "<br>"
+                 }
+                 document.getElementById("sita1").innerHTML = n;
+             }
+     </script>
+     <br><hr>
+
+
+     <h2><li>petarn start (bottom) (*)</li></h2>
+     <input type="text" id="add1" class="inp">
+     <button onclick="star()" class="butt">submit</button>
+     <p id="show"></p>
+     <script>                      
+     function star(){
+         let a1 = document.getElementById("add1").value;
+         let b1 = ' ';
+         for($i=1; $i<=a1; $i++){
+             // b1 += "*";
+             for($j = $i; $j <=a1; $j++){
+                 b1 += " 😎 ";        
+             }
+             b1 += "<br />";
+         } 
+         document.getElementById("show").innerHTML = b1;
+     }                                         
+     </script>
+     <br><hr>
+
+
+    <h2><li>calculator</li></h2>
+    <div id="formstyle">
+        <form name="form1">
+            <input id="calc" type="text" name="answer">
+            <br>
+            <br>
+            <input class="cal" value="1" type="button" onclick="form1.answer.value += '1'">
+            <input class="cal" value="2" type="button" onclick="form1.answer.value += '2'">
+            <input class="cal" value="3" type="button" onclick="form1.answer.value += '3'">
+            <input class="cal" value="+" type="button" onclick="form1.answer.value += '+'">
+            <br>
+            <br>
+            <input class="cal" value="4" type="button" onclick="form1.answer.value += '4'">
+            <input class="cal" value="5" type="button" onclick="form1.answer.value += '5'">
+            <input class="cal" value="6" type="button" onclick="form1.answer.value += '6'">
+            <input class="cal" value="/" type="button" onclick="form1.answer.value += '/'">
+            <br>
+            <br>
+            <input class="cal" value="7" type="button" onclick="form1.answer.value += '7'"> 
+            <input class="cal" value="8" type="button" onclick="form1.answer.value += '8'">
+            <input class="cal" value="9" type="button" onclick="form1.answer.value += '9'">
+            <input class="cal" value="." type="button" onclick="form1.answer.value += '.'">
+            <br>
+            <br>
+            <input class="cal" value="0" type="button" onclick="form1.answer.value += '0'">
+            <input class="cal" value="*" type="button" onclick="form1.answer.value += '*'">
+            <input class="cal" value="-" type="button" onclick="form1.answer.value += '-'">
+            <input class="cal" value="=" type="button" onclick="form1.answer.value = eval(form1.answer.value)">
+            <br>
+            <br>
+            <input type="button" value="clear all"  onclick="form1.answer.value = ' ' " id="clear">
+        </form>
+    </div>
+    <br><hr>
+
+
+    <h2><li>marks 📊</li></h2>
+    <input type="text" id="love" class="inp">
+    <button onclick="love()" class="butt">submit</button>
+    <p id="khush"></p>
+    <script>
+        function love(){
+        let a = document.getElementById("love").value;
+        //  console.log(l);
+        let b = (a/7);
+        document.getElementById("khush").innerHTML = b + " " + "%";
+        }
+    </script>
+    <br><hr>
+
+
+   <h2><li>have good day 🥰</li></h2>
+   <input id="myInput" type="text" class="inp">
+   <button onclick="mygoodday()" class="butt">submit</button>
+   <p id="velue"></p>
+   <script>
+   function mygoodday() {
+       let day = document.getElementById("myInput").value;
+       let dayname;
+       switch(day) {
+         case "1":
+         dayname = "have good sunday";
+         break;
+         case "2":
+         dayname = "have good monday";
+         break;
+         case "3":
+         dayname = "have good tuesday";
+         break;
+         case "4":
+         dayname = "have good wednesday";
+         break;
+         case "5":
+         dayname = "have good thursday";
+         break;
+         case "6":
+         dayname = "have good friday";
+         break;
+         case "7":
+         dayname = "have good saturday";
+         break;
+         default:
+         dayname =  " this day is not found plese try again ❌";
+       }
+       document.getElementById("velue").innerHTML = dayname;
+   }
+   </script>
+   <br><hr>
+
+
+   <h2><li>replace</li></h2>
+   <h3 id="hi5">hello niraj</h3>
+   <button onclick="myhome()" class="butt">replace</button>
+   <script>
+    function myhome(){
+            let r = document.getElementById("hi5").innerHTML;
+            document.getElementById("hi5").innerHTML = r.replace("niraj" , "jambucha") ;
+        }
+   </script>
+   <br><hr>
+
+
+   <h2><li>number to string</li></h2>
+   <p id="n-s"></p>
+   <script>
+    let ns = 10;
+    let ns1 = ns.toString();
+    document.getElementById("n-s").innerHTML = ns + " " + typeof(ns) + "<br>    " + ns1 + " " +typeof (ns1) ;
+   </script>
+   <br><hr>
+
+
+   <h2><li>string to number</li></h2>
+   <p id="s-n"></p>
+   <script>
+    let sn = "niraj";
+    let sn1 = typeof(Number.parseInt(sn))
+    document.getElementById("s-n").innerHTML = sn + " " + typeof(sn) + "<br>" + sn + " " + sn1;
+   </script>
+   <br><hr>
+
+
+    <h2><li>array to string</li></h2>
+    <p id="a-s"></p>
+    <script>
+        let as = ["niraj", "twisa", "monika", "janvi"];
+        console.log(as);
+        let as1 = as.toString();
+        document.getElementById("a-s").innerHTML = as + " " + typeof(as) + "<br>    " + as1 + " " + typeof (as1);
+    </script>
+    <br><hr>
+
+
+    <h2><li>arry to forlop ( )</li></h2>
+    <p id="arry-for"></p>
+    <script>
+        let cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+        let text = "";
+        for (let i = 0; i < cars.length; i++) {
+            text += "my car is :-" + cars[i] + "<br>";
+        }
+
+        document.getElementById("arry-for").innerHTML = text;
+    </script>
+    <br><hr>
+ 
+
+    <h2><li>arry to forEach ( )</li></h2>
+    <p id="arry-each"></p>
+    <script>
+        let numbers = [6, 9, 5, 29, 2006];
+        let txt = "";
+        numbers.forEach(myFunction);
+        document.getElementById("arry-each").innerHTML = txt;
+        function myFunction(value, index, array) {
+            txt += "my birthday is :- " + " " + value + "<br>";
+        }
+    </script>
+    <br><hr>
+
+
+    <h2><li>multiple arry join</li></h2>
+    <p id="arry-join"></p>
+    <script>
+         let n1 = ["niraj","jambucha"]
+         let n2 = [" 9 "," 6 "," 2006"]
+         let n3 = ["BMW ", "Volvo","Audi","supra"];
+         let n4 = ["kohli","dhoni","Gill","hardik"];
+         document.getElementById("arry-join").innerHTML = " my name is :- " + " " + n1 + "<br>" + " my birthday is  :- " + n2 + "<br>" + "  my favorite cars is  :- " + n3 + "<br>"+ " my favorite cricketers is :- " + n4; 
+    </script>
+    <br><hr>
+
+
+    <h2><li>push function use in onclick button</li></h2>
+    <p id="push1"></p>
+    <button onclick="mypush()" class="butt">push</button>
+    <script>
+        let pushh = ["niraj"];
+        document.getElementById("push1").innerHTML = pushh;
+        function mypush(){
+            pushh.push("jambucha");
+            document.getElementById("push1").innerHTML = pushh;
+        }
+    </script>
+    <br><hr>
+
+
+    <h2><li>foreach ( ) in function</li></h2>
+    <p id="function"></p>
+    <script>
+         let name = ["niraj","twisa","monika","janvi"];
+         let text1 = " ";
+         name.forEach(function(niraj){
+           text1 += "my name is :-" + " " + niraj + "<br>";
+        });
+        document.getElementById("function").innerHTML = text1;
+    </script>
+     <br><hr>
+
+
+     <h2><li>breack</li></h2>
+     <p id="breack"></p>
+     <script>
+      let text2 = ["niraj","twisa","monika","janvi"];
+      let text3 = " " ;
+      for(let i = 0; i < text2.length; i++){
+        if(i == 3){
+         break ;
+        }  
+         text3 += " my number is :- " + text2[i] + "<br>";
+      }
+      document.getElementById("breack").innerHTML = text3;
+     </script>
+      <br><hr>
+
+
+     <h2><li>continue</li></h2>
+     <p id="continue"></p>
+     <script>
+      let text4 = ["10","20","30","40","50"];
+      let text5 = " " ;
+      for(let i = 0; i < text4.length; i++){
+        if(i == 2){
+          continue;
+        }  
+         text5 += " my number is :- " + text4[i] + "<br>";
+      }
+      document.getElementById("continue").innerHTML = text5;
+     </script>
+      <br><hr>
+
+
+     <h2><li>for of in arry</li></h2>
+     <p id="for-of"></p>
+     <script>
+         let name1 = ["niraj", "mona", "janvi", "twisu"];
+         let text6 = " ";
+         for (let w of name1) {
+             text6 += " my name is :- " + [w] + "<br>" ;
+            }
+         document.getElementById("for-of").innerHTML = text6;
+            
+    </script>
+    <br><hr>
+
+
+    <h2><li>for of in string</li></h2>
+    <p id="for-of1"></p>
+    <script>
+         let name2 = "abcodig";     
+         let text7 = " ";
+         for (let v of name2) {
+             text7 += [v] + "<br>";
+            }
+         document.getElementById("for-of1").innerHTML = text7;
+    </script>
+    <br><hr>
+     
+    <h2><li>forEach ( ) in a set </li></h2>
+    <p id="for-of2"></p>
+    <script>
+      let text8 = new Set(["rajvi", "twisa", "janvi", "monika", "niraj"]);
+      let text9 = " ";
+      text8.forEach(abcodig);
+      function abcodig(v){
+            text9 += " my name is :- " + v + "<br>";
+      }
+      document.getElementById("for-of2").innerHTML = text9;
+    </script>
+    <br><hr>
+
+    <h1 style="text-align: center;">16 - 1 - 2024 ( task )</h1>
+    <h2><li>object</li></h2>
+    <p id="object1"></p>
+    <h2><li>rename</li></h2>
+    <p id="object2"></p>
+    <h2><li>null object and store a value</li></h2>
+    <p id="object3"></p>
+    <h2><li>object in for loop</li></h2>
+    <p id="object4"></p>
+    <h2><li>delete</li></h2>
+    <p id="object5"></p>
+    <h2><li>nexted object in loop</li></h2>
+    <p id="object6"></p>
+    <h2><li>creat object in use this key word </li></h2>
+    <p id="object7"></p>
+    <h2><li>arry to object use in parse </li></h2>
+    <p id="parse"></p>
+    <h2><li>creat a object and use get function</li></h2>
+    <p id="get"></p>
+    <h2><li>creat a constructors</li></h2>
+    <p id="constructors"></p>
+    <hr>
+    <script>
+
+        // object
+        let name3 = {
+            fname: "niraj",
+            lname: "jambucha",
+            age: 20,
+        }
+
+        // rename
+        name3.fname = "natitk";
+        document.getElementById("object1").innerHTML = "my name is " + name3.fname + "<br>" + " my lastname is " + name3.lname + "<br>" + " my age is " + name3.age;
+        document.getElementById("object2").innerHTML = "my name is " + name3.fname ;
+
+        // null object and store a value
+        let my = {}
+            my.car = "BMW",
+            my.model = "b2",
+            my.price = "$65466"
+         document.getElementById("object3").innerHTML = "my car name is :- " + my.car;
+
+        // object in for loop
+        let car = {
+            name: "supra",
+            model:"mka",
+            price:"$5654324"
+        }
+        let car1 = '' ;
+        for(let x in car){
+            car1 += [x] + " :- " + car[x] + "<br>";
+        }
+        document.getElementById('object4').innerHTML = car1;   
+
+        // delete
+        delete name3.age;
+        document.getElementById('object5').innerHTML = name.age; 
+        
+        
+        // nexted object in loop
+        let cars1 = {
+            name : "bently",
+            model : "b1",
+            price:"$2324",
+
+            obj:{
+                crash : "ferrari",
+                model : "f1",
+                price: "$56567575",
+            }
+        }
+        let na = '';
+        for(let x in cars1.obj){
+            na += [x] + " :-" + cars1.obj[x] + "<br>";
+        }
+        document.getElementById("object6").innerHTML = na ;
+
+        // creat object in use this key word 
+        let carse = {
+            carname: "audi",
+            carmodel : "a1",
+            carprice :"$54",
+
+             myname:function(){
+                 return this.carname + ' ' + this.carprice;
+             }
+
+        }
+        document.getElementById("object7").innerHTML = carse.myname().toUpperCase();
+
+        // arry to object use in parse        
+        let name5 = '["niraj","twisa","janvi","monika"]'
+        let name4 = JSON.parse(name5);
+        document.getElementById("parse").innerHTML = name4;
+
+        // creat a object and use get function
+        let name6 = {
+        name: "niraj",
+        age: 20,
+        color: "black",
+        get myname() {
+          return this.name;
+        },
+      };
+      document.getElementById("get").innerHTML = " my name is " + name6.myname;
+
+      // object constructors type - blueprint
+      function helloniraj(name, number) {
+      this.firstname = name;
+      this.mynumber = number;
+      }
+
+     // Create object
+     let niraj = new helloniraj("niraj", 1);
+     let myfather = new helloniraj("rajubhai", 2);
+     let mymother = new helloniraj("naynaben", 3);
+     let mybrother = new helloniraj("natitk", 4);
+     let mysister = new helloniraj("bhagvati", 5);  
+
+     document.getElementById("constructors").innerHTML = 
+     "My name is " + niraj.firstname + "<br>" +
+     "My number is " + niraj.mynumber + "<br>" + 
+     "My father is " + myfather.firstname + "<br>" +
+     "My number is " + myfather.mynumber + "<br>" +
+     "My mother is " + mymother.firstname + "<br>" +
+     "My number is " + mymother.mynumber + "<br>" + 
+     "My brother is " + mybrother.firstname + "<br>" +
+     "My number is " + mybrother.mynumber + "<br>" + 
+     "My sister is " + mysister.firstname + "<br>" +
+     "My number is " + mysister.mynumber + "<br>" ;
+
+     </script>
+    
+    <h1 style="text-align: center;">17 - 1 - 2024 ( task )</h1>
+    <h2><li>Create object and use prototype function</li></h2>
+    <p id="prototype"></p>
+    <h2><li>for of in arry</li></h2>
+    <p id="in-arry"></p>
+    <h2><li>for of in string</li></h2>
+    <p id="in-string"></p>
+    <h2><li>create a Set</li></h2>
+    <p id="Set"></p>
+    <h2><li>set null and add value</li></h2>
+    <p id="Set1"></p>
+    <h2><li>create a variables and Set a variables</li></h2>
+    <p id="Set2"></p>
+    <h2><li>set in foreach ( )</li></h2>
+    <p id="Set3"></p>
+    <h2><li>create a Map ( )</li></h2>
+    <p id="Map"></p>
+    <h2><li>set a Map values</li></h2>
+    <p id="Map1"></p>
+    <h2><li>Map chenge values</li></h2>
+    <p id="Map2"></p>
+    <h2><li>Map delete values</li></h2>
+    <p id="Map3"></p>
+    <h2><li>Map delete clear</li></h2>
+    <p id="Map4"></p>
+    <h2><li>Map in forech ( )</li></h2>
+    <p id="Map5"></p>
+    <h2><li>pasing the peramiters</li></h2>
+    <p id="peramiters"></p>
+    <h2><li>constructors method</li></h2>
+    <p id="new-constructors"></p>
+    <h2><li>object in function and invoking function</li></h2>
+    <p id="ramji"></p>
+    <p id="ramji1"></p>
+    <p id="ramji2"></p>
+    <hr>
+
+
+    <script>
+
+     // creat a constructors and use in prototype function
+     function Hell(firstname, myage, something) {
+     this.firstname = firstname;
+     this.myage = myage;
+     this.something = something;
+        }
+
+     let niraj1 = new Hell("niraj", 18, "09");
+
+     Hell.prototype.proto = function () {
+         return this.firstname + " " + this.myage;
+     };
+
+     document.getElementById("prototype").innerHTML = niraj1.proto();
+
+
+     let name7 = ["niraj", "mona", "janvi", "twisu"];
+     let text10 = " ";
+     for (let w of name7) {
+         text10 += " my name is :- " + [w] + "<br>" ;
+        }
+     document.getElementById("in-arry").innerHTML = text10;
+            
+
+     let name8 = "hello niraj";     
+     let text11 = " ";
+     for (let v of name8) {
+         text11 += [v] + "<br>";
+        }
+     document.getElementById("in-string").innerHTML = text11;
+
+      // create a Set
+      let name9 = new Set(["a", "b", "c", "d", "e"]);
+      document.getElementById("Set").innerHTML = name9.size;
+
+      // set null and add value
+      let name10 = new Set();
+      name10.add("a");
+      name10.add("b");
+      name10.add("c");
+      name10.add("d");
+      document.getElementById("Set1").innerHTML = name10.size;
+
+      // create a variables and Set a variables
+      let niraj11 = new Set();
+      let niraj2 = "niraj";
+      let niraj3 = "twisa";
+      let niraj4 = "monika";
+      let niraj5 = "janvi";
+      niraj11.add(niraj2);
+      niraj11.add(niraj3);
+      niraj11.add(niraj4);
+      niraj11.add(niraj5);
+      document.getElementById("Set2").innerHTML = niraj11.size;
+
+      // set in foreach ( )
+      let niraj12 = " ";
+      niraj11.forEach(function (v) {
+        niraj12 += "my name is" + v + "<br>";
+      });
+      document.getElementById("Set3").innerHTML = niraj12;
+
+      // create a Map ( )
+      let niraj13 = new Map([
+        ["niraj", 1000],
+        ["twisa", 2000],
+        ["monika", 3000],
+        ["janvi", 4000],
+      ]);
+      document.getElementById("Map").innerHTML = niraj13.get("niraj");
+
+       // set a Map values
+       let niraj14 = new Map();
+       niraj14.set("niraj", 1000);
+       niraj14.set("twisa", 2000);
+       niraj14.set("monika", 3000);
+       niraj14.set("janvi", 4000);
+       document.getElementById("Map1").innerHTML = niraj14.get("twisa");
+
+       // Map chenge values
+       niraj14.set("twisa", 5000)
+       document.getElementById("Map2").innerHTML = niraj14.get("twisa");
+
+      // Map delete values
+      niraj14.delete("twisa");
+      document.getElementById("Map3").innerHTML = niraj14.size;
+
+      // Map delete clear
+      niraj14.clear();
+      document.getElementById("Map4").innerHTML = niraj14.size;
+
+      // Map in forech ( )
+      let text12 = " ";
+      niraj13.forEach(function (v, k) {
+       text12 += " my name is " + k + " and " + " my salery is " + v + "<br>";
+      });
+      document.getElementById("Map5").innerHTML = text12;
+
+      // pasing the peramiters
+      let a = hy(10, 20);
+      function hy(a, b) {
+        return " hello niraj " + " your selery is " + 5000 + (a+b) ;
+      }
+      document.getElementById("peramiters").innerHTML = a;
+
+      // constructors method
+      function helloniraj(name, name1,color,game,number) {
+      this.sername = name;
+      this.fname = name1;
+      this.mycolor = color;
+      this.mygame = game;
+      this.mynumber = number;
+      }
+
+     let nirajj = new helloniraj("jambucha","niraj","white","cricket","09");
+
+     document.getElementById("new-constructors").innerHTML = 
+     "My name is " + nirajj.sername + "<br>" +
+     "My number is " + nirajj.fname + "<br>" + 
+     "My father is " + nirajj.mycolor + "<br>" +
+     "My game is " + nirajj.mygame + "<br>" +
+     "My mother is " + nirajj.mynumber + "<br>" ;
+
+     let ram1 = {
+        car: "supra",
+        modal: "mk4",
+        color: "black",
+        id: "9029",
+
+        city : {
+          niraj: "surat",
+          twisu: "ahmedabad",
+        },
+
+        fav : {
+            criceter : "gill",
+            fotbool : "ronaldo"
+        },
+
+        ramji: function () {
+          return "hello abc" + " " + " may car is " + " " + ram1.car;
+        },
+
+        sitaji : function () {
+        return " my city is " + this.city.niraj ;
+        },
+
+        fave : function () {
+        return " my fevret criceter is " + this.fav.criceter ;
+        },
+
+       };
+
+      document.getElementById("ramji").innerHTML = ram1.ramji();
+      document.getElementById("ramji1").innerHTML = ram1.sitaji();
+      document.getElementById("ramji2").innerHTML = ram1.fave();
+  
+    </script>
+
+    <h1 style="text-align: center;">18 - 1 - 2024 ( task )</h1>
+    <h2><li>lamp on / off</li></h2>
+    <p>
+    <button type="button" onclick="light(1)" class="lamp">On</button>
+    <img id="myImage" src="off-lemp.gif" width="100" height="180">
+    <button type="button" onclick="light(0)" class="lamp lamp-color">Off</button>
+    </p>
+    <script>
+
+        function light(sw) {
+          let pic;
+          if (sw == 0) {
+            pic = "off-lemp.gif"
+          } else {
+            pic = "on-lemp.gif"
+          }
+          document.getElementById('myImage').src = pic;
+        }
+    </script>
+    <br>
+
+    <h2><li>chenge the imge use to onmousedown and onmouseup</li></h2>
+    <div  onmousedown="mdown(this)" onmouseup="mup(this)" >click the Megice :- </div>
+    <img id="myImage1" src="off-lemp.gif" >
+
+    <script>
+            function mdown(id) {
+                document.getElementById('myImage1').src = "on-lemp.gif";
+            }
+        
+            function mup(id) {
+                document.getElementById('myImage1').src = "off-lemp.gif";
+            }
+    </script>
+
+    <h1><li>chenge the imge use to onmouseover and onmouseout</li></h1>
+    <div onmouseover="mover()" onmouseout="mout()">Touch To Magic :- </div>
+    <img id="myImage2" src="off-lemp.gif" alt="Lamp Image">
+
+    <script>
+       function mover() {
+           document.getElementById('myImage2').src = "on-lemp.gif";
+       }
+
+       function mout() {
+           document.getElementById('myImage2').src = "off-lemp.gif";
+       }
+   </script>
+
+
+   <h1><li>show the Date ( )</li></h1>
+   <p id="Dom606"></p>
+   <button onclick=" Datee()">click</button>
+      
+        <script>
+          function Datee() {
+            document.getElementById("Dom606").innerHTML = new Date();
+          }
+    </script>
+    <hr>
+
+    <h1><li>hide and show text in button</li></h1>
+    <p id="ShowHide">Hello niraj jambucha</p>
+    <button onclick="showText()" class="lamp">Show</button>
+    <button onclick="hideText()" class="lamp lamp-color">Hide</button>
+    
+    <script>
+        function showText() {
+            $("#ShowHide").show();
+        }
+    
+        function hideText() {
+            $("#ShowHide").hide();
+        }
+    </script>
+    
+  
+
+
+</body>
+</html>     

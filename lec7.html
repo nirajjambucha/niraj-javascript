@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><li>javascript number</li></h1>
+    <hr />
+    <h2><li>decimal(1.25)</li></h2>
+    <h2><li>without decimal(1)</li></h2>
+    <hr />
+    <h2><li>NaN and Infinity</li></h2>
+    <p id="number"></p>
+    <hr />
+    <h2><li>number to string</li></h2>
+    <h3><li>console.log()</li></h3>
+    <hr />
+    <h2><li>string to number</li></h2>
+    <h3><li>console.log()</li></h3>
+    <hr />
+    <h2><li>bigint</li></h2>
+    <p id="number1"></p>
+    <p id="number2"></p>
+    <hr />
+    <h2><li>number as object</li></h2>
+    <p id="number3"></p>
+    <hr />
+    <h2><li>toExponential and toFixed and toPrecision</li></h2>
+    <p id="number4"></p>
+    <hr />
+    <h2><li>parseInt and parseFloat</li></h2>
+    <p id="number5"></p>
+    <hr />
+    <h1><li>maths object</li></h1>
+    <hr />
+    <h2><li>round</li></h2>
+    <p id="number6"></p>
+    <hr />
+    <h2><li>ceil</li></h2>
+    <p id="number7"></p>
+    <hr />
+    <h2><li>floor</li></h2>
+    <p id="number8"></p>
+    <hr />
+    <h2><li>pow and sqrt and abs</li></h2>
+    <p id="number9"></p>
+    <hr />
+    <h2><li>min and max</li></h2>
+    <p id="number10"></p>
+    <hr />
+    <h2><li>random</li></h2>
+    <p id="number11"></p>
+    <hr />
+
+    <script>
+      // NaN and Infinity
+      let n = 10 / "niraj";
+      let n1 = 10 / 0;
+      // document.getElementById("number").innerHTML = n;
+      document.getElementById("number").innerHTML = n1;
+
+      // isNaN
+      // number to string
+      let n2 = 10;
+      console.log(typeof toString(n2));
+
+      // string to number
+      let n3 = "10";
+      console.log(typeof Number.parseInt(n3));
+
+      // bigint
+      let bigint = 123456789012345678901234567890;
+      document.getElementById("number1").innerHTML =
+        bigint + " " + typeof bigint;
+      let bigint1 = BigInt(123456789012345678901234567890);
+      document.getElementById("number2").innerHTML =
+        bigint1 + " " + typeof bigint1;
+
+      // number as object
+      let n4 = 10;
+      let n5 = new Number(10);
+      document.getElementById("number3").innerHTML = n4 == n5;
+      // document.getElementById("number3").innerHTML = n4 === n5;
+
+      // toExponential and toFixed and toPrecision
+      let n6 = 12.6233434;
+      // document.getElementById("number4").innerHTML = n6.toExponential(5);
+      // document.getElementById("number4").innerHTML = n6.toFixed(5);
+      document.getElementById("number4").innerHTML = n6.toPrecision(5);
+
+      // parseInt and parseFloat
+      let n7 = 123;
+      // document.getElementById("number5").innerHTML = Number(true);
+      // document.getElementById("number5").innerHTML = Number(false);
+      // document.getElementById("number5").innerHTML = Number("1010");
+      // document.getElementById("number5").innerHTML = Number("1010");
+      // document.getElementById("number5").innerHTML = parseInt("12.25");
+      // document.getElementById("number5").innerHTML = parseFloat("12.25");
+      // document.getElementById("number5").innerHTML = Number.parseInt("12.25");
+      document.getElementById("number5").innerHTML = Number.parseFloat("12.25");
+
+      //maths object
+      // round
+      let n8 = 10.6;
+      document.getElementById("number6").innerHTML = Math.round(n8);
+
+      //ceil
+      // document.getElementById("number7").innerHTML = Math.ceil(12.9);
+      document.getElementById("number7").innerHTML = Math.ceil(-12.9);
+
+      //floor
+      // document.getElementById("number8").innerHTML = Math.floor(12.9);
+      document.getElementById("number8").innerHTML = Math.floor(-12.9);
+
+      // pow and sqrt and abs
+      // document.getElementById("number9").innerHTML = Math.pow(8,2);
+      // document.getElementById("number9").innerHTML = Math.sqrt(16);
+      document.getElementById("number9").innerHTML = Math.abs(17 - 8);
+
+      // min and max
+      // document.getElementById("number10").innerHTML = Math.max(5,29);
+      document.getElementById("number10").innerHTML = Math.min(9, 10);
+
+      // random
+      // document.getElementById("number11").innerHTML = Math.random();
+      // document.getElementById("number11").innerHTML = Math.random()*100;
+      document.getElementById("number11").innerHTML = Math.floor(
+        Math.random() * 100 + 1
+      );
+    </script>
+  </body>
+</html>

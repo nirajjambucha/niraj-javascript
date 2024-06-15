@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box  ;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h2{
+            text-align: center;
+            padding: 12px;
+            font-size: 40px;
+            color: black;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        h3{
+            padding: 10px;
+            text-align: center;
+            font-size: 25px;    
+        }
+        form{
+            width: 400px;
+            background-color: white;
+            padding: 15px 40px 10px;
+            border: 1px solid black;
+            margin: 10px auto 0;
+            border-radius: 10px;
+        }
+        label{
+            display: block;
+            margin-bottom: 7px;
+        }
+        input,select{
+        border: 1px solid #cccccc;
+        display: block;
+        width: 100%;
+        border-radius: 5px;
+        padding: 10px;
+        color: black;
+        font-size: 15px;
+        }
+        .row{
+            padding-bottom: 10px;
+        }
+        .form-inline{
+            border: 1px solid #ccc;
+            padding: 8px 10px 4px;
+            border-radius: 5px;
+        }
+        .form-inline label,
+        .form-inline input{
+            display: inline-block;
+            width: auto;
+            padding-right: 15px;
+        }
+        .error{
+            color: rgb(180, 15, 15);
+        }
+        input[type="submit"]{
+            background-color: rgb(21, 185, 250);
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>validation  Form</h2>
+    <form action="#" name="contactForm" onsubmit="return validateForm()" method="get">
+
+        <h3>Application Form</h3>
+        <div class="row">
+          <label for="name">Name :- </label>
+          <input type="text" name="name" id="name" placeholder="Please Enter your name ...">
+          <div id="nameErr" class="error"></div>
+        </div>
+
+        <div class="row">
+            <label for="email">Email :- </label>
+            <input type="text" name="email" id="email" placeholder="Please Enter your email ...">
+            <div id="emailErr" class="error"></div>
+        </div>
+
+        <div class="row">
+            <label for="mobile">Phone :- </label>
+            <input type="text" name="mobile" id="mobile" placeholder="Please Enter your mobile ...">
+            <div id="mobileErr" class="error"></div>
+        </div>
+
+        <div class="row">
+            <label for="subject">Subject :- </label>
+            <select name="subject" id="subject">
+                <option>Selected</option>
+                <option value="html">html</option>
+                <option value="css">css</option>
+                <option value="javascript">javascript</option>
+                <option value="php">php</option>
+            </select>
+            <div id="subjectErr" class="error"></div>
+        </div>
+
+        <div class="row">
+            <label for="gender">Gender :- </label>
+            <div class="form-inline">
+                <input type="radio" name="gender" id="male" value="male">
+                <label for="male">Male</label>
+                <br>
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="female">Female</label>
+            </div>
+            <div id="genderErr" class="error"></div>
+        </div>
+
+        <div class="row">
+            <label for="">Hobbies :- </label>
+            <div class="form-inline">
+                <input type="checkbox" name="hobbies[]" id="sports">
+                <label for="sports">Sports</label>
+                <br>
+                <input type="checkbox" name="hobbies[]" id="Movies">
+                <label for="Movies">Movies</label>
+                <br>
+                <input type="checkbox" name="hobbies[]" id="Music">
+                <label for="Music">Music</label>
+            </div>
+            <div id="hobbiesErr" class="error"></div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Log in">
+        </div>
+
+    </form>
+
+    <script>
+
+      function printError(elmeId,mess){
+        document.getElementById(elmeId).innerHTML = mess ;
+      }
+
+      function validateForm(){
+        // alert("hii")
+        var name = document.contactForm.name.value ;
+        var email = document.contactForm.email.value ;
+        var mobile = document.contactForm.mobile.value ;
+        var subject = document.contactForm.subject.value ;
+        var gender = document.contactForm.gender.value ;
+        var hobbies = [] ;
+        var checkbox = document.getElementsByName("hobbies[]");
+
+        for(var i = 0; i < checkbox.length; i++){
+            if(checkbox[i].checked){
+                hobbies.push(checkbox[i].value);
+            }
+        }
+
+        var nameErr = emailErr = mobileErr = subjectErr = genderErr = hobbiesErr = true;
+
+        if(name == '' ){
+            printError("nameErr"," ⚠ please enter your name ...")
+        }else{
+            var regex = /^[a-zA-Z ]{2,30}$/;
+            if(regex.test(name) === false){
+                printError("nameErr"," ⚠ please enter a valid name ...")
+            }else{
+                printError("nameErr"," ");
+                nameErr = false;
+            }
+        }
+
+        if(email == '' ){
+            printError("emailErr"," ⚠ please enter your email ...")
+        }else{
+            var regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,30}$/; 
+            if(regex.test(email) === false){
+                printError("emailErr"," ⚠ please enter a valid email ...")
+            }else{
+                printError("emailErr"," ");
+                emailErr = false;
+            }
+        }
+
+        if(mobile == '' ){
+            printError("mobileErr"," ⚠ please enter your mobile ...")
+        }else{
+             var regex = /^\(?([0-9]{3})\)?[-.]?([0-9]{3})[-.]?([0-9]{4})$/;
+            if(regex.test(mobile) === false){
+                printError("mobileErr"," ⚠ please enter a valid  mobile number ...")
+            }else{
+                printError("mobileErr"," ");
+                mobileErr = false;
+            }
+        }
+
+        if(subject == 'Selected' ){
+            printError("subjectErr"," ⚠ please enter your subject ...")
+        }else{
+                printError("subjectErr"," ");
+                subjectErr = false;
+            }
+
+        if(gender == ''){
+            printError("genderErr"," ⚠ please enter your gender ...");
+        }else{
+                printError("genderErr"," ");
+                genderErr = false;
+            }
+
+        if(hobbies == ''){
+            printError("hobbiesErr"," ⚠ please enter your hobbies ...");
+        }else{
+                printError("hobbiesErr"," ");
+                hobbiesErr = false;
+            }
+
+        if((nameErr || emailErr || mobileErr || subjectErr || genderErr || hobbiesErr) == true){
+            return false;
+        }
+
+      }
+    </script>
+</body>
+</html>

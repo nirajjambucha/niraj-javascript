@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>AJAX  = Asynchronous JavaScript and XML</h1>
+    <hr>
+    <p id="xml"></p>
+    <p id="xml1"></p>
+    <button onclick="myname()">click</button>
+    <script>
+        function myname() {
+
+            // create an XMLHttpRequest object
+            let test = new XMLHttpRequest();
+    
+            // onprogress - optional
+            test.onprogress = function () {
+                document.getElementById("xml").innerHTML = "on the way";
+            };
+    
+            // ready state - optional
+            test.onreadystatechange = function () {
+                console.log("read.stats " + test.readyState);
+            };
+    
+            // open the XMLHttpRequest object
+            test.open("GET", "ajex-17.html", true);
+            // test.open("GET", "ajex-17.html", false);
+            // test.open("GET", "ajex-17.html");
+    
+            // callback function
+            test.onload = function () {
+                document.getElementById("xml1").innerHTML = this.responseText;
+            };
+    
+            // send Request to a server 
+            test.send();
+        }
+    </script>
+    <hr>
+
+    <p id="xml2"></p>
+    <p id="xml3"></p>
+    <button onclick="myname1()">click</button>
+    <script>
+        function myname1() {
+    
+            // create an XMLHttpRequest object
+            let test = new XMLHttpRequest();
+    
+            // open the XMLHttpRequest object
+            test.open("GET", "ajex-17.html", false);
+            
+            // send Request to a server 
+            test.send();
+            document.getElementById("xml3").innerHTML = test.responseText;
+        }
+    </script>
+    <hr>
+
+    <p id="xml4"></p>
+    <p id="xml5"></p>
+    <button onclick="myname2()">click</button>
+    <script>
+        function myname2() {
+    
+            // create an XMLHttpRequest object
+            let test = new XMLHttpRequest();
+
+            test.onreadystatechange = function(){
+                if(this.status = 200){
+                    document.getElementById("xml4").innerHTML = this.responseText;
+                }else{
+                    document.getElementById("xml5").innerHTML = " NOT FOUND ";
+                }
+            }
+
+            // open the XMLHttpRequest object
+            test.open("GET", "ajex-17.html");
+            
+            // send Request to a server 
+            test.send();
+        }
+    </script>
+    <hr>
+
+    <p id="xml6"></p>
+    <p id="xml7"></p>
+    <button onclick="mynam3()">click</button>
+    <script>
+        function mynam3() {
+
+            // create an XMLHttpRequest object
+            let test = new XMLHttpRequest();
+    
+            // onprogress - optional
+            test.onprogress = function () {
+            document.getElementById("xml6").innerHTML = "on the way";
+            };
+    
+            // ready state - optional
+            test.onreadystatechange = function () {
+            console.log("read.stats " + test.readyState);
+            };
+    
+            // open the XMLHttpRequest object
+            test.open("post", "	https://dummy.restapiexample.com/api/v1/create");
+            // test.open("GET", "https://dummyjson.com/products/1  ");
+
+            test.getAllResponseHeaders("content-type" , "application")
+    
+            // callback function
+            test.onload = function () {
+            document.getElementById("xml7").innerHTML = this.responseText;
+            };
+    
+            // send Request to a server 
+            test.send();
+        }
+    </script>
+    <hr>
+
+</body>
+</html>

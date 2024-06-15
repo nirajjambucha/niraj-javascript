@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><li>object and object method</li></h1>
+    <hr>
+    <h2><li>Object.values</li></h2>
+    <p id="object"></p>
+    <hr>
+    <h2><li>JSON.stringify</li></h2>
+    <p id="object1"></p>
+    <hr>
+    <h2><li>JSON.stringify and JSON.tostring</li></h2>
+    <p id="object2"></p>
+    <p id="object3"></p>
+    <hr>
+    <h1><li>object and object method</li></h1>
+    <hr>
+    <h2><li>get</li></h2>
+    <p id="object4"></p>
+    <p id="object5"></p>
+    <hr>
+    <h2><li>set</li></h2>
+    <p id="object6"></p>
+    <hr>
+    <h1><li>object constructors type - blueprint</li></h1>
+    <hr>
+    <p id="object7"></p>
+    <hr>  
+    <h1><li>prototype</li></h1>
+    <p id="prototype"></p>
+    <hr>
+    <h1><li>function expression</li></h1>
+    <p id="expression"></p>
+    <hr>
+    <h1><li> self - invoking function</li></h1>
+    <p id="invoking"></p>
+    <hr>
+    <h1><li>ES5 vs ES6</li></h1>
+    <hr>
+    <h2><li>ES5</li></h2>
+    <p id="ES5"></p>
+    <hr>
+    <h2><li>ES6</li></h2>
+    <p id="ES6"></p>
+    <hr>
+    <h1><li>pasingvalue</li></h1>
+    <p id="pasingvalue"></p>
+    <hr>
+    <h1><li>call ( ) </li></h1>
+    <p id="call"></p>
+    <hr>
+    <h1><li>apply ( ) </li></h1>
+    <p id="apply"></p>
+    <hr>
+
+    <script>
+      // Object.values
+      let name = {
+        name: "niraj",
+        age: 20,
+        color: "black",
+      };
+      document.getElementById("object").innerHTML = Object.values(name);
+
+      // JSON.stringify
+      let name1 = {
+        name: "niraj",
+        age: 20,
+        color: "black",
+        today: new Date(),
+      };
+      document.getElementById("object1").innerHTML = JSON.stringify(name1);
+
+      //  JSON.stringify and JSON.tostring
+      let name2 = {
+        name: "niraj",
+        color: "black",
+        age: function () {
+          return 18;
+        },
+      };
+      document.getElementById("object2").innerHTML = JSON.stringify(name2);
+      document.getElementById("object3").innerHTML = name2.age.toString();
+
+      // get
+      let name3 = {
+        name: "niraj",
+        age: 20,
+        color: "black",
+        get myname() {
+          return this.name;
+        },
+        hello: function () {
+          return this.color;
+        },
+      };
+
+      document.getElementById("object4").innerHTML = "my name is" + name3.myname;
+      document.getElementById("object5").innerHTML = "my color is" + name3.hello();
+
+      // set
+      let name4 = {
+        name: "abc",
+        age: 12, 
+        color: "red",
+        set age(a) {
+          this.age1 = a;
+        },
+      };
+      name4.age = 50; 
+      document.getElementById("object6").innerHTML = "my age is "+ name4.age1; 
+
+      // object constructors type - blueprint
+      function helloniraj(name, age, id) {
+      this.firstname = name;
+      this.myage = age;
+      this.myid = id;
+      // this.color = "black"
+      this.hellot = function () {
+        return this.firstname + " " + this.myage;
+      }
+      }
+     // Create object
+     let niraj = new helloniraj("niraj", 18, "09");
+     let monika = new helloniraj("monika", 20, "09");
+     
+     // add value
+     niraj.color = "black";
+
+     niraj.names = function(){
+      return this.firstname + " " + this.myage;
+     }
+     document.getElementById("object7").innerHTML = 
+     "My name is " + niraj.firstname + "<br>" +
+     "My age is " + niraj.myage + "<br>" + 
+     "My name is " + monika.firstname + "<br>" +
+     "My age is " + monika.myage + "<br>" +
+     "My color is " + niraj.color + "<br>" +
+     " hello " + niraj.hellot() + "<br>" +
+     " hello " + monika.hellot() + "<br>" +
+     " hello " + niraj.names() + "<br>" ;
+
+      // creat a constructors and use in prototype function
+      function Hell(firstname, myage, something) {
+      this.firstname = firstname;
+      this.myage = myage;
+      this.something = something;
+         }
+
+      let niraj1 = new Hell("niraj", 18, "09");
+
+      Hell.prototype.proto = function () {
+          return this.firstname + " " + this.myage;
+      };
+      document.getElementById("prototype").innerHTML = niraj1.proto();
+
+      // function expression
+      let a = function (a,b){
+        return a+b
+      }
+      document.getElementById("expression").innerHTML = a(10,20);
+
+      // self - invoking function
+      (function(){
+        document.getElementById("invoking").innerHTML = " hello niraj "
+      })();
+
+      // ES5 vs ES6
+      // ES5
+      var abc = function(x,y){
+        return x + y ;
+      }
+      document.getElementById("ES5").innerHTML = abc(20,30);
+
+      // ES6
+      let ab = (x,y) => x + y ;
+      document.getElementById("ES6").innerHTML = abc(10,20);
+
+      // pasingvalue
+      function ab1(x,y){
+        if(y == undefined){
+          y = 50;
+        }
+        return x + y ;
+      }
+      // document.getElementById("pasingvalue").innerHTML = ab1(10,20);
+      document.getElementById("pasingvalue").innerHTML = ab1(10);
+      // function ab1(x,y=50){
+      //     return x + y ;
+      // }
+      // document.getElementById("pasingvalue").innerHTML = ab1(10,20);
+      // document.getElementById("pasingvalue").innerHTML = ab1(10);
+
+      // call ( )
+      let call = {
+        fullname: function (a) {
+          return this.fname + " " + this.color + a;
+        }
+      };
+      let first = {
+        fname: "niraj",
+        color: "white"
+      };
+      
+      let second = {
+        fname: "monika",
+        color: "black"
+      };
+
+      // document.getElementById("call").innerHTML = call.fullname.call(second,);
+      document.getElementById("call").innerHTML = call.fullname.call(second, " audi ");
+
+      // call ( )
+      let apply = {
+        fullname1: function (a) {
+          return this.fname + " " + this.color + a;
+        }
+      };
+      let first1 = {
+        fname: "niraj",
+        color: "white"
+      };
+      
+      let second1 = {
+        fname: "monika",
+        color: "black"
+      };
+
+      // document.getElementById("apply").innerHTML = apply.fullname1.apply(first1,);
+      document.getElementById("apply").innerHTML = apply.fullname1.apply(first1, [" supra "]);
+
+      
+    </script>
+  </body>
+</html>

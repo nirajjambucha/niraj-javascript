@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1><li>Dom = Document object model</li></h1>
+    <hr>
+    <h3><li>html elements</li></h3>
+    <h3><li>properties</li></h3>
+    <h3><li>methodes</li></h3>
+    <h3><li>events</li></h3>
+    <hr>
+    <h1><li>Elements Dom</li></h1>
+    <hr>  
+    <h3><li>document.getElementbyId()</li></h3>
+    <h3><li>document.getElementsByClassName()</li></h3>
+    <h3><li>document.getElementsByTagName()</li></h3>
+    <br>
+    <h3><li>id</li></h3>
+    <h3><li>tagname</li></h3>
+    <h3><li>classname</li></h3>
+    <h3><li>css selectors</li></h3>
+    <h3><li>object</li></h3>
+    <hr>
+    
+    <h2><li>getElementById ( ) </li></h2>
+    <p id="dom"></p>
+    <hr>
+    
+    <h2><li>getElementsByClassName()</li></h2>
+    <ul class="dom1">
+      <P class="dom2">Coffee</P>
+    </ul>
+    <button onclick="myFunction()">Change</button>
+    <hr>
+    
+    <h2><li>getElementsByTagName()</li></h2>
+    <p>This is a paragraph.</p>
+    <p>This is a paragraph.</p>
+    <p>This is a paragraph.</p>
+    <hr>
+
+    <h2><li>getElementsByTagName()</li></h2>
+    <p id="dom3"></p>
+    <p class="abc">Lorem, ipsum.</p>
+    <p class="abc">Lorem ipsum dolor sit.</p>
+    <hr>
+
+    <script>
+    document.getElementById("dom").innerHTML = "hello niraj";
+
+    function myFunction() {
+    let list = document.getElementsByClassName("dom1")[0];
+    list.getElementsByClassName("dom2")[0].innerHTML = "Milk";
+  
+    }
+
+    document.getElementsByTagName("p")[4].innerHTML = "Hello World!";
+
+    let x = document.querySelectorAll("p.abc")
+    document.getElementById("dom3").innerHTML = " hello " + x[1].innerHTML;
+
+    </script>
+
+    <h1>Dom events</h1>
+    <hr>
+    <h2><li>one click events</li></h2>
+    <p id="dom4"></p>
+    <h3 onclick="this.innerHTML = 'hello'">Lorem, ipsum.</h3>
+    <hr>
+
+
+    <p id="dom5">Lorem, ipsum.</p>
+    <button onclick="myname()">click</button>
+    <button onclick="myname1(this)">click</button>
+    <script>
+      function myname(){
+        document.getElementById("dom5").innerHTML = "hello" ;
+      }
+      function myname1(id){
+        id.innerHTML = "hello" ;
+      }
+    </script>
+    <br><hr>
+
+    <h1><li>onchange ( ) </li></h1>
+    name : <input type="text" name="fname" id="fname" onchange="up()">
+    <script>
+      function up(){
+        let x1 = document.getElementById("fname")
+        x1.value = x1.value.toUpperCase();
+      }
+    </script>
+    <hr>
+
+    <h1><li>onmouseover and onmouseout</li></h1>
+    <div onmouseover="mover(this)" onmouseout="mout(this)" style="background-color: black; color: white;padding: 10px;text-align: center;">
+      niraj
+    </div>
+    <script>
+      function mover(id){
+        id.innerHTML = " hello niraj "
+      }
+      function mout(id){
+        id.innerHTML = " hello janvi "
+      }
+    </script>
+    <hr>
+
+    <h1><li>onmousedown and onmouseup</li></h1>
+    <div onmousedown="mdown(this)" onmouseup="mup(this)" style="background-color: black; color: white;padding: 10px;text-align: center;">
+      niraj
+    </div>
+    <script>
+      function mdown(id){
+        id.innerHTML = " hello niraj "
+      }
+      function mup(id){
+        id.innerHTML = " hello janvi "
+      }
+    </script>
+    <hr>
+
+      <h1><li>onfocus and onblur</li></h1>
+      <label for="fname1">Name:</label>
+      <input type="text" name="fname1" id="fname1" onfocus="tex(this)" onblur="ab(this)"> 
+      <script>
+        function tex(id) {
+          id.style.backgroundColor = "red";
+        }
+    
+        function ab(id) {
+          id.style.backgroundColor = "green";
+        }
+      </script>
+      <br><hr>
+
+      <h1><li>addEventListener ( )</li></h1>
+        <button id="btn">click</button>
+        <p id="Dom6"></p>
+        <p id="Dom7"></p>
+      
+        <script>
+          document.getElementById("btn").addEventListener("click", demo);
+          document.getElementById("btn").addEventListener("click", text);
+      
+          function demo() {
+            document.getElementById("Dom6").innerHTML = Date();
+          }
+      
+          function text() {
+            document.getElementById("Dom7").innerHTML = " hello niraj";
+          }
+
+    
+      </script>
+
+
+
+
+</body>
+</html>

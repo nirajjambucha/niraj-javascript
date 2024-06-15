@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><li>javascript string</li></h1>
+    <hr />
+    <h2><li>back-tics ( ` ` )</li></h2>
+    <p id="str"></p>
+    <hr />
+    <script>
+      let a = `back-tics 'hello' "hello"`;
+      document.getElementById("str").innerHTML = `${a}`;
+    </script>
+
+    <h2><li>string = object :- true</li></h2>
+    <h2><li>object = object :- false</li></h2>
+    <h3><li>string = object :- true</li></h3>
+    <p id="str1"></p>
+    <h2><li>object = object :- false</li></h2>
+    <p id="str2"></p>
+    <script>
+      let c = "niraj";
+      let c1 = new String("niraj");
+      let c2 = new String("niraj");
+      document.getElementById("str1").innerHTML = c == c1;
+      document.getElementById("str2").innerHTML = c1 == c2;
+    </script>
+    <hr />
+
+    <h1><li>string methode</li></h1>
+    <hr />
+    <h2><li>lenght</li></h2>
+    <p id="str3"></p>
+    <p id="str4"></p>
+    <hr />
+    <h2><li>slice</li></h2>
+    <p id="str5"></p>
+    <p id="str6"></p>
+    <p id="str7"></p>
+    <p id="str8"></p>
+    <hr />
+    <h2><li>substring</li></h2>
+    <p id="str9"></p>
+    <p id="str10"></p>
+    <p id="str11"></p>
+    <hr />
+    <h2><li>substr</li></h2>
+    <p id="str12"></p>
+    <p id="str13"></p>
+    <p id="str14"></p>
+    <hr />
+    <h2><li>replace</li></h2>
+    <p id="str15"></p>
+    <p id="str16"></p>
+    <hr />
+    <p id="str17"></p>
+    <p id="str18"></p>
+    <hr />
+    <p id="str19"></p>
+    <p id="str20"></p>
+    <hr />
+    <p id="str21"></p>
+    <p id="str22"></p>
+    <hr />
+    <h2><li>UpperCase</li></h2>
+    <p id="str23"></p>
+    <hr />
+    <h2><li>LowerCase</li></h2>
+    <p id="str24"></p>
+    <hr />
+    <h2><li>concat</li></h2>
+    <p id="str25"></p>
+    <hr />
+    <h2><li>trim = right - left</li></h2>
+    <p id="str26"></p>
+    <hr />
+    <h2><li>padStart and padEnd</li></h2>
+    <p id="str27"></p>
+    <h2><li>charAt and charCodeAt</li></h2>
+    <p id="str28"></p>
+    <h2><li>indexOf and lastIndexOf</li></h2>
+    <p id="str29"></p>
+    <h2><li>search</li></h2>
+    <p id="str30"></p>
+    <h2><li>includes</li></h2>
+    <p id="str31"></p>
+    <h2><li>startsWith</li></h2>
+    <p id="str32"></p>
+    <h2><li>match</li></h2>
+    <p id="str33"></p>
+
+    <script>
+      // lenght
+      let a2 = "abcdefghijklmnopqrstuvwxyZ";
+      let a3 = a.length;
+      document.getElementById("str3").innerHTML = a2;
+      document.getElementById("str4").innerHTML = a3;
+
+      //substring
+      let name = "niraj,janvi,twisa,monika";
+      document.getElementById("str5").innerHTML = name;
+      let name1 = name.slice(7);
+      document.getElementById("str6").innerHTML = name1;
+      let name2 = name.slice(7, 15);
+      document.getElementById("str7").innerHTML = name2;
+      let name3 = name.slice(-7);
+      document.getElementById("str8").innerHTML = name3;
+
+      //substring
+      let name4 = "niraj,janvi,twisa,monika";
+      document.getElementById("str9").innerHTML = name4;
+      let name5 = name.slice(7);
+      document.getElementById("str10").innerHTML = name5;
+      let name6 = name.slice(7, 15);
+      document.getElementById("str11").innerHTML = name6;
+
+      //substring
+      let name7 = "niraj,janvi,twisa,monika";
+      document.getElementById("str12").innerHTML = name7;
+      let name8 = name.slice(7);
+      document.getElementById("str13").innerHTML = name8;
+      let name9 = name.slice(7, 15);
+      document.getElementById("str14").innerHTML = name9;
+
+      //replace
+      let name10 = "niraj,janvi,twisa,monika";
+      // console.log(name10.replace("niraj","jambucha"))
+      document.getElementById("str15").innerHTML = name10;
+      let name11 = name10.replace("niraj", "jambucha");
+      document.getElementById("str16").innerHTML = name11;
+
+      let name12 = "NIRAJ,janvi,twisa,monika";
+      // console.log(name12.replace(/niraj/i,"jambucha"))
+      document.getElementById("str17").innerHTML = name12;
+      let name13 = name12.replace(/niraj/i, "jambucha");
+      document.getElementById("str18").innerHTML = name13;
+
+      let name14 = "niraj,janvi,niraj,twisa,niraj,monika";
+      // console.log(name14.replace(/niraj/g,"jambucha"))
+      document.getElementById("str19").innerHTML = name14;
+      let name15 = name14.replace(/niraj/g, "jambucha");
+      document.getElementById("str20").innerHTML = name15;
+
+      let name16 = "NIRAJ,janvi,NIRAJ,twisa,NIRAJ,monika";
+      // console.log(name16.replace(/niraj/gi,"jambucha"))
+      document.getElementById("str21").innerHTML = name16;
+      let name17 = name14.replace(/niraj/gi, "jambucha");
+      document.getElementById("str22").innerHTML = name17;
+
+      let name18 = "niraj jambucha  niraj jambucha";
+      // console.log(name18.toUpperCase())
+      let name19 = name18.toUpperCase();
+      document.getElementById("str23").innerHTML = name19;
+
+      let name20 = "niraj jambucha  niraj jambucha";
+      // console.log(name20.toLowerCase())
+      let name21 = name20.toLowerCase();
+      document.getElementById("str24").innerHTML = name21;
+
+      // concat
+      let a4 = "hello ";
+      let a5 = "niraj ";
+      let a6 = "jambucha ";
+      let a7 = a4.concat(a5, a6);
+      document.getElementById("str25").innerHTML = a7;
+
+      // trim
+      let a8 = "     niraj jambucha     ";
+      // console.log(a8.length)
+      // let a9 = a8.trim();
+      // let a9 = a8.trimRight();
+      let a9 = a8.trimLeft();
+      document.getElementById("str26").innerHTML = a9.length;
+
+      //padStart and  padEnd
+      let p = "5";
+      // let p1 = p.padStart(5,"0");
+      let p2 = p.padEnd(5, "0");
+      // document.getElementById("str27").innerHTML = p1;
+      document.getElementById("str27").innerHTML = p2;
+
+      // charAt
+      let ab1 = "hello niraj";
+      // document.getElementById("str28").innerHTML = ab1.charAt(6);
+      // document.getElementById("str28").innerHTML = ab1[6];
+      document.getElementById("str28").innerHTML = ab1.charCodeAt(6);
+
+      // indexof and lastIndexOf
+      let ab2 = "hello HELLO niraj hello niraj jambucha hello abcobing";
+      // let ab3 = ab2.indexOf("niraj");
+      let ab3 = ab2.lastIndexOf("niraj");
+      document.getElementById("str29").innerHTML = ab3;
+
+      // search
+      let ab4 = ab2.search("jambucha");
+      document.getElementById("str30").innerHTML = ab4;
+
+      // includes
+      let ab5 = ab2.includes("HELLO");
+      document.getElementById("str31").innerHTML = ab5;
+
+      // startsWith
+      let ab6 = ab2.startsWith("hello");
+      document.getElementById("str32").innerHTML = ab6;
+
+      // match
+      let ab7 = "hello HELLO niraj hello niraj jambucha hello abcobing";
+      let ab8 = ab7.match(/HELLO/gi);
+      document.getElementById("str33").innerHTML = ab8;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><li>javascript function (return)</li></h1>
+    <hr />
+    <p id="hello1"></p>
+    <hr />
+    <p id="hello2"></p>
+    <hr />
+    <script>
+      let ab = myname();
+      function myname() {
+        return "hello niraj";
+      }
+      document.getElementById("hello1").innerHTML = ab;
+
+      function myhello() {
+        return "hey niraj";
+      }
+      myhello();
+      document.getElementById("hello2").innerHTML = myhello();
+    </script>
+
+    <p id="hello3"></p>
+    <script>
+      let a = hy(10, 20);
+      function hy(a, b) {
+        return 5000 + (a + b);
+      }
+      document.getElementById("hello3").innerHTML = a;
+    </script>
+    <hr />
+
+    <p id="hello4"></p>
+    <script>
+      function hii(a) {
+        var text = "hello abc";
+        return "hello niraj" + " " + text + " " + a;
+      }
+      let b = hii(9);
+      // document.getElementById("hello4").innerHTML = hii();
+      document.getElementById("hello4").innerHTML = b;
+    </script>
+    <hr />
+
+    <p id="hello5"></p>
+    <script>
+      let sum = (a, b) => {
+        let k = "my name is" + " " + a + " " + "your name is" + " " + b;
+        return "hello" + " " + k;
+      };
+      document.getElementById("hello5").innerHTML = sum("niraj", "krushali");
+    </script>
+    <hr />
+
+    <h1><li>object</li></h1>
+    <hr />
+    <p id="hello6"></p>
+    <script>
+      let name = {
+        car: "supra",
+        modal: "mk4",
+        color: "black",
+        id: "9029",
+      };
+      document.getElementById("hello6").innerHTML =
+        "my car name is :-" +
+        " " +
+        name.car +
+        "<br>" +
+        "car modal is :-" +
+        " " +
+        name.modal +
+        "<br>" +
+        "car color is :-" +
+        " " +
+        name.color +
+        "<br>" +
+        "car i'd is :-" +
+        " " +
+        name.id;
+    </script>
+    <hr />
+    <h1><li>object in arry</li></h1>
+    <hr />
+    <p id="hello7"></p>
+    <hr />
+    <p id="hello8"></p>
+    <hr />
+    <p id="hello9"></p>
+    <hr />
+    <p id="hello10"></p>
+    <hr />
+    <p id="hello11"></p>
+    <hr />
+    <p id="hello12"></p>
+    <script>
+      let name1 = {
+        car: "supra",
+        modal: "mk4",
+        color: "black",
+        id: "9029",
+
+        hello: function () {
+          let a = "hello niraj";
+          return "hello abc" + " " + a;
+        },
+
+        ary: ["niraj", "mona", "janvi", "twisu"],
+
+        city: {
+          niraj: "surat",
+          twisu: "ahmedabad",
+        },
+
+        myroom: function (a, b) {
+          let sub = a + b + 1000;
+          return "my name is :- " + " " + name1.ary[0];
+          return "my name is :- " + " " + name1.ary[0] + " " + sub;
+        },
+        myhome: function (a, b) {
+          let sub = a + b + 1000;
+          return "my name is :- " + " " + name1.ary[0] + " " + sub;
+        },
+      };
+      document.getElementById("hello7").innerHTML =
+        "my car name is :-" +
+        " " +
+        name.car +
+        "<br>" +
+        "car modal is :-" +
+        " " +
+        name.modal +
+        "<br>" +
+        "car color is :-" +
+        " " +
+        name.color +
+        "<br>" +
+        "car i'd is :-" +
+        " " +
+        name.id;
+      document.getElementById("hello8").innerHTML = name1.hello();
+      document.getElementById("hello9").innerHTML =
+        name1.ary + "<br>" + name1.ary[0];
+      document.getElementById("hello10").innerHTML = name1.city.niraj;
+      document.getElementById("hello11").innerHTML = name1.myroom();
+      document.getElementById("hello12").innerHTML = name1.myhome(10, 20);
+    </script>
+  </body>
+</html>

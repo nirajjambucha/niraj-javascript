@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><li>type of javascripte operators</li></h1>
+    <h2><li>Arithmetic Operators</li></h2>
+    <h2><li>Assignment Operators</li></h2>
+    <h2><li>Comparison Operators</li></h2>
+    <h2><li>String Operators</li></h2>
+    <h2><li>Logical Operators</li></h2>
+    <h2><li>Ternary Operators</li></h2>
+    <hr />
+    <h1><li>Arithmetic Operators</li></h1>
+    <h2><li>Addition (+)</li></h2>
+    <h2><li>Subtraction (-)</li></h2>
+    <h2><li>Multiplication (*)</li></h2>
+    <h2><li>Division (/)</li></h2>
+    <h2><li>Modulus (%)</li></h2>
+    <h2><li>Increment (++)</li></h2>
+    <h2><li>Decrement (--)</li></h2>
+    <hr />
+    <h2><li>Addition (+)</li></h2>
+    <p id="Arithmetic1"></p>
+    <h2><li>Subtraction (-)</li></h2>
+    <p id="Arithmetic2"></p>
+    <h2><li>Multiplication (*)</li></h2>
+    <p id="Arithmetic3"></p>
+    <h2><li>Division (/)</li></h2>
+    <p id="Arithmetic4"></p>
+    <h2><li>Modulus (%)</li></h2>
+    <p id="Arithmetic5"></p>
+    <h2><li>Increment (++)</li></h2>
+    <p id="Arithmetic6"></p>
+    <h2><li>Decrement (--)</li></h2>
+    <p id="Arithmetic7"></p>
+    <script>
+      let a = 10;
+      let b = 5;
+      let c = a + b;
+      document.getElementById("Arithmetic1").innerHTML = c;
+
+      let d = 10;
+      let e = 5;
+      let f = d - e;
+      document.getElementById("Arithmetic2").innerHTML = f;
+
+      let g = 10;
+      let h = 5;
+      let i = g * h;
+      document.getElementById("Arithmetic3").innerHTML = i;
+
+      let j = 10;
+      let k = 5;
+      let l = j / k;
+      document.getElementById("Arithmetic4").innerHTML = l;
+
+      let m = 10;
+      let n = 5;
+      let o = m % n;
+      document.getElementById("Arithmetic5").innerHTML = o;
+
+      let p = 10;
+      p++;
+      document.getElementById("Arithmetic6").innerHTML = p;
+
+      let q = 10;
+      q--;
+      document.getElementById("Arithmetic7").innerHTML = q;
+    </script>
+    <hr />
+    <h1><li>Assignment Operators</li></h1>
+    <h2><li>Addition (+)</li></h2>
+    <h2><li>Subtraction (-)</li></h2>
+    <h2><li>Multiplication (*)</li></h2>
+    <h2><li>Division (/)</li></h2>
+    <h2><li>Modulus (%)</li></h2>
+    <hr />
+    <h2><li>Addition (+)</li></h2>
+    <p id="Assignment1"></p>
+    <h2><li>Subtraction (-)</li></h2>
+    <p id="Assignment2"></p>
+    <h2><li>Multiplication (*)</li></h2>
+    <p id="Assignment3"></p>
+    <h2><li>Division (/)</li></h2>
+    <p id="Assignment4"></p>
+    <h2><li>Modulus (%)</li></h2>
+    <p id="Assignment5"></p>
+    <script>
+      let a1 = 10;
+      a1 += 20;
+      document.getElementById("Assignment1").innerHTML = a1;
+
+      let b1 = 10;
+      b1 -= 20;
+      document.getElementById("Assignment2").innerHTML = b1;
+
+      let c1 = 10;
+      c1 *= 20;
+      document.getElementById("Assignment3").innerHTML = c1;
+
+      let d1 = 10;
+      d1 /= 20;
+      document.getElementById("Assignment4").innerHTML = d1;
+
+      let e1 = 10;
+      e1 %= 20;
+      document.getElementById("Assignment5").innerHTML = e1;
+    </script>
+    <hr />
+    <h1><li>string opreter</li></h1>
+    <p id="string1"></p>
+    <p id="string2"></p>
+    <script>
+      let text1 = "niraj";
+      let text2 = "jambucha";
+      let text3 = text1 + " " + text2;
+      document.getElementById("string1").innerHTML = text3;
+
+      let text4 = "jambucha";
+      text4 += " " + "niraj";
+      document.getElementById("string2").innerHTML = text4;
+    </script>
+    <hr />
+    <h1><li>Comparison Operators</li></h1>
+    <h2><li>equal to (==)</li></h2>
+    <h2><li>equal value and equal type (===)</li></h2>
+    <h2><li>not equal (!=)</li></h2>
+    <h2><li>not equal value or not equal type (!==)</li></h2>
+    <h2><li>greater than (> / >=)</li></h2>
+    <h2><li>less than (< / <=)</li></h2>
+    <h2><li>ternary opreter (?)</li></h2>
+    <hr />
+    <h2><li>equal to (==)</li></h2>
+    <p id="Comparison1"></p>
+    <h2><li>equal value and equal type (===)</li></h2>
+    <p id="Comparison2"></p>
+    <h2><li>not equal (!=)</li></h2>
+    <p id="Comparison3"></p>
+    <h2><li>not equal value or not equal type (!==)</li></h2>
+    <p id="Comparison4"></p>
+    <h2><li>greater than (> / >=)</li></h2>
+    <p id="Comparison5"></p>
+    <h2><li>less than (< / <=)</li></h2>
+    <p id="Comparison6"></p>
+    <h2><li>ternary opreter (?)</li></h2>
+    <p id="Comparison7"></p>
+    <script>
+      let a2 = 10;
+      let b2 = 10;
+      let c2 = a2 == b2;
+      document.getElementById("Comparison1").innerHTML = c2;
+
+      let d2 = 10;
+      let e2 = 10;
+      let f2 = d2 === e2;
+      document.getElementById("Comparison2").innerHTML = f2;
+
+      let g2 = 10;
+      let h2 = 10;
+      let i2 = g2 != h2;
+      document.getElementById("Comparison3").innerHTML = i2;
+
+      let j2 = 10;
+      let k2 = 10;
+      let l2 = j2 !== k2;
+      document.getElementById("Comparison4").innerHTML = l2;
+
+      let m2 = 5;
+      let n2 = 10;
+      let o2 = m2 >= n2;
+      document.getElementById("Comparison5").innerHTML = o2;
+
+      let p2 = 5;
+      let q2 = 10;
+      let r2 = p2 <= q2;
+      document.getElementById("Comparison6").innerHTML = r2;
+
+      let s2 = 29;
+      7;
+      let t2 = 10;
+      let u2 = s2 ?? t2;
+      document.getElementById("Comparison7").innerHTML = u2;
+    </script>
+    <hr />
+    <h1><li>logical Operators</li></h1>
+    <h2><li>logical operater (&&)</li></h2>
+    <h2><li>logical or (||)</li></h2>
+    <h2><li>logical not (!=)</li></h2>
+    <hr />
+    <h2><li>logical operater (&&)</li></h2>
+    <p id="logical1"></p>
+    <h2><li>equal value and equal type (||)</li></h2>
+    <p id="logical2"></p>
+    <h2><li>not equal (!=)</li></h2>
+    <p id="logical3"></p>
+    <script>
+      let name1 = 100;
+      let name2 = 50;
+      let name3 = name1 < name2 && name1 > name2;
+      document.getElementById("logical1").innerHTML = name3;
+
+      let name4 = 100;
+      let name5 = 50;
+      let name6 = name4 < name5 || name4 > name5;
+      document.getElementById("logical2").innerHTML = name6;
+
+      let name7 = 100;
+      let name8 = 50;
+      let name9 = name7 < name8 != name7 > name8;
+      document.getElementById("logical3").innerHTML = name9;
+    </script>
+    <hr />
+    <h1><li>condition statements</li></h1>
+    <h2><li>if</li></h2>
+    <h2><li>if else</li></h2>
+    <h2><li>else if</li></h2>
+    <hr />
+    <h2><li>if</li></h2>
+    <h3><li>parseInt</li></h3>
+    <p id="condition1"></p>
+    <h3><li>parseFloat</li></h3>
+    <p id="condition2"></p>
+    <h3><li>string to number</li></h3>
+    <h4>console.log(2)</h4>
+    <h3><li>prompt dynemic</li></h3>
+    <p id="condition3"></p>
+    <h3><li>date dynemic</li></h3>
+    <p id="condition4"></p>
+    <script>
+      let niraj1 = 100;
+      let niraj2 = Number.parseInt(niraj1);
+      document.getElementById("condition1").innerHTML = niraj2;
+
+      let niraj3 = 100.5;
+      let niraj4 = Number.parseFloat(niraj3);
+      document.getElementById("condition2").innerHTML = niraj4;
+
+      let niraj5 = "100";
+      console.log(typeof niraj5);
+      console.log(typeof Number.parseInt(niraj5));
+
+      // let niraj7 = prompt("please enter your number");
+      // if(niraj7 >  5){
+      // document.getElementById("condition3").innerHTML = "hello niraj jambucha" + " " + niraj7;
+      // }
+
+      let niraj9 = new Date().getDate();
+      if (niraj9 > 5) {
+        document.getElementById("condition4").innerHTML =
+          "hello niraj jambucha" + " " + niraj9;
+      }
+    </script>
+    <hr />
+    <h1><li>if else statement</li></h1>
+    <p id="statement1"></p>
+    <p id="statement2"></p>
+    <script>
+      //    let hy = 100;
+      //    let hyy = prompt("please enter your number");
+      //    if(hy > hyy){
+      //           document.getElementById("statement1").innerHTML = "hello niraj" + " " + hyy;
+      //    }else{
+      //          document.getElementById("statement1").innerHTML = "hyy niraj" + " " + hyy;
+      //    }
+
+      let hy1 = "niraj";
+      if (hy1 == "niraj") {
+        document.getElementById("statement2").innerHTML =
+          "hello kp" + " " + hy1;
+      } else {
+        document.getElementById("statement2").innerHTML = "hyy kp" + " " + hy1;
+      }
+    </script>
+    <h1><li>else if statement</li></h1>
+    <p id="statement3"></p>
+    <script>
+      let ab = 32;
+      let text = " ";
+      if (ab < 18) {
+        text = "hello niraj" + ab;
+      } else if (ab > 20) {
+        text = "hello krushali " + ab;
+      } else {
+        text = "soory not fund" + ab;
+      }
+      document.getElementById("statement3").innerHTML = text;
+    </script>
+  </body>
+</html>

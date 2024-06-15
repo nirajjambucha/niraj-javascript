@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><li>JSON => javascript object notation</li></h1>
+    <hr>
+    <h2><li>function for converting JSON string into javascript object</li></h2>
+    <h3>JSON.parse ( ) </h3>
+    <hr>
+    <h2><li>function for converting an object into a JSON string</li></h2>
+    <h3>JSON.stringify ( ) </h3>    
+    <hr>
+    <h2><li>JSON data a name and a value </li></h2>
+    <h3>"   "</h3>
+    <hr>
+    <h2>JSON data types</h2>
+    <h3><li>string</li></h3>
+    <h3><li>number</li></h3>
+    <h3><li>object</li></h3>
+    <h3><li>array</li></h3>
+    <h3><li>boolean</li></h3>
+    <h3><li>null</li></h3>
+    <hr>
+    <h2><li>JSON.parse ( )</li></h2>
+    <p id="parse"></p>
+    <p id="parse1"></p>
+    <hr>
+    <h2><li>JSON.stringify ( ) </li></h2>    
+    <p id="stringify"></p>
+    <p id="stringify1"></p>
+    <hr> 
+
+    <script>
+
+        let test = '{"name" : "niraj","age" : "18"} ';
+        let test1 = JSON.parse(test);
+        document.getElementById("parse").innerHTML = " my name is " + " " + test1.name + "<br>" + " my age is " + " " + test1["age"];
+
+        let name = '["niraj","twisa","janvi","monika"]'
+        let name1 = JSON.parse(name);
+        document.getElementById("parse1").innerHTML = name1;
+ 
+        let name2 = {name : "niraj" , age : 18 , color : "black"};
+        let name3 = JSON.stringify(name2);
+        document.getElementById("stringify").innerHTML = name3;
+
+        let name4 = ["niraj","twisa","janvi","monika"];
+        let name5 = JSON.stringify(name4);
+        document.getElementById("stringify1").innerHTML = name5;
+
+    </script>
+</body>
+</html>

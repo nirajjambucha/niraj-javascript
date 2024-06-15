@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2><li>breack</li></h2>
+    <p id="breack"></p>
+    <hr />
+    <h2><li>continue</li></h2>
+    <p id="continue"></p>
+    <hr />
+    <h1><li>iterables for in / for of</li></h1>
+    <pre>
+    object = for in  
+    arry = for of
+           for loop
+           for of
+           foreach()
+  </pre
+    >
+    <hr />
+    <h2><li>for in</li></h2>
+    <p id="for-in"></p>
+    <p id="for-in1"></p>
+    <hr />
+    <h2><li>for of</li></h2>
+    <p id="for-of"></p>
+    <p id="for-of1"></p>
+    <hr />
+    <h1><li>Set</li></h1>
+    <hr />
+    <h2><li>length == size</li></h2>
+    <p id="set1"></p>
+    <hr />
+    <h2><li>add value</li></h2>
+    <p id="set2"></p>
+    <hr />
+    <h2><li>create a variables and Set a variables</li></h2>
+    <p id="set3"></p>
+    <hr />
+    <h2><li>foreach ( )</li></h2>
+    <p id="set4"></p>
+    <hr />
+    <h2><li>values</li></h2>
+    <p id="set5"></p>
+    <hr />
+    <h1><li>Map</li></h1>
+    <hr />
+    <h2><li>create a Map ( )</li></h2>
+    <p id="map6"></p>
+    <hr />
+    <h2><li>length == size</li></h2>
+    <p id="map7"></p>
+    <hr />
+    <h2><li>set a Map values</li></h2>
+    <p id="map8"></p>
+    <p id="map9"></p>
+    <hr />
+    <h2><li>delete</li></h2>
+    <p id="map10"></p>
+    <hr />
+    <h2><li>has</li></h2>
+    <p id="map11"></p>
+    <hr />
+    <h2><li>forech ( )</li></h2>
+    <p id="map12"></p>
+    <h2><li>entries = key and value</li></h2>
+    <p id="map13"></p>
+    <hr />
+
+    <script>
+      // breack
+      let text = " ";
+      for (let i = 0; i < 10; i++) {
+        if (i == 5) {
+          break;
+        }
+        text += " my number is :- " + i + "<br>";
+      }
+      document.getElementById("breack").innerHTML = text;
+
+      // continue
+      let text1 = " ";
+      for (let i = 0; i < 10; i++) {
+        if (i == 5) {
+          continue;
+        }
+        text1 += " my number is :- " + i + "<br>";
+      }
+      document.getElementById("continue").innerHTML = text1;
+
+      // for-in
+      let niraj = {
+        fname: "niraj",
+        lname: "jambucha",
+        id: 10,
+      };
+      let text2 = " ";
+      for (let x in niraj) {
+        // text2 += [x] + "<br>";     // in
+        // text2 += niraj[x] + "<br>";   //  of
+        text2 += "my" + " " + [x] + " is " + niraj[x] + "<br>";
+      }
+      document.getElementById("for-in").innerHTML = text2;
+
+      // for-in
+      let niraj1 = [10, 20, 30, 40, 50];
+      let text3 = " ";
+      for (let x in niraj1) {
+        // text1 += [x] + "<br>";        // in
+        text3 += niraj1[x] + "<br>"; //  of
+      }
+      document.getElementById("for-in1").innerHTML = text3;
+
+      // for-of
+      let niraj2 = ["niraj", "mona", "janvi", "twisu"];
+      let text4 = " ";
+      for (let w of niraj2) {
+        text4 += " my name is " + [w] + "<br>";
+        //  n += " my name is :- " + niraj2[w] + "<br>" ;
+      }
+      document.getElementById("for-of").innerHTML = text4;
+
+      // for-of
+      let niraj3 = "abcodig";
+      let text5 = " ";
+      for (let v of niraj3) {
+        text5 += [v] + "<br>";
+      }
+      document.getElementById("for-of1").innerHTML = text5;
+
+      // Set
+      // create a Set
+      // length == size
+      let niraj4 = new Set(["a", "b", "c", "d", "e"]);
+      document.getElementById("set1").innerHTML = niraj4.size;
+
+      //add value
+      let niraj5 = new Set();
+      niraj5.add("a");
+      niraj5.add("b");
+      niraj5.add("c");
+      niraj5.add("d");
+      document.getElementById("set2").innerHTML = niraj5.size;
+
+      let niraj10 = new Set();
+      // create a variables
+      let niraj6 = "niraj";
+      let niraj7 = "twisa";
+      let niraj8 = "monika";
+      let niraj9 = "janvi";
+      //Set a variables
+      niraj10.add(niraj6);
+      niraj10.add(niraj7);
+      niraj10.add(niraj8);
+      niraj10.add(niraj9);
+      document.getElementById("set3").innerHTML = niraj10.size;
+
+      // foreach ( )
+      let text6 = " ";
+      niraj10.forEach(function (v) {
+        text6 += v + "<br>";
+      });
+      document.getElementById("set4").innerHTML = text6;
+
+      // values
+      let text7 = " ";
+      for (let i of niraj10.values()) {
+        text7 += i + "<br>";
+      }
+      document.getElementById("set5").innerHTML = text7;
+
+      // create a Map ( )
+      let niraj11 = new Map([
+        ["niraj", 1000],
+        ["twisa", 2000],
+        ["monika", 3000],
+        ["janvi", 4000],
+      ]);
+      document.getElementById("map6").innerHTML = niraj11.get("niraj");
+
+      // length == size
+      document.getElementById("map7").innerHTML = niraj11.size;
+
+      // set a Map values
+      let niraj12 = new Map();
+      niraj12.set("niraj", 1000);
+      niraj12.set("twisa", 2000);
+      niraj12.set("monika", 3000);
+      niraj12.set("janvi", 4000);
+      document.getElementById("map8").innerHTML = niraj12.get("twisa");
+      document.getElementById("map9").innerHTML = niraj12.size;
+
+      // delete
+      niraj12.delete("niraj");
+      document.getElementById("map10").innerHTML = niraj12.size;
+
+      // has
+      document.getElementById("map11").innerHTML = niraj12.has("janvi");
+
+      // forech ( )
+      let text8 = " ";
+      niraj11.forEach(function (v, k) {
+        text8 += " my name is " + k + " and " + " my salery is " + v + "<br>";
+      });
+      document.getElementById("map12").innerHTML = text8;
+
+      // entries = key and value
+      let text9 = " ";
+      for (let i of niraj11.entries()) {
+        text9 += i + "<br>";
+      }
+      document.getElementById("map13").innerHTML = text9;
+    </script>
+
+    <h1>javascript function</h1>
+    <p id="function1"></p>
+    <p id="function2"></p>
+    <p id="function3"></p>
+    <p id="function4"></p>
+    <p id="function5"></p>
+    <p id="function6"></p>
+    <p id="function7"></p>
+    <script>
+      let myname = () => "hello niraj"
+      document.getElementById("function1").innerHTML = myname();
+
+      let myname1 = (a,b) => "hello niraj " + (a + b);
+      document.getElementById("function2").innerHTML = myname1(5,10);
+
+      let hello = " " ;
+      hello = function(a,b){
+        return "hello niraj " + a + " " + b;
+      }
+      document.getElementById("function3").innerHTML = hello(5,10);
+
+      let hii = " " ;
+      hii = () => {
+        return  "hello niraj"
+      }
+      document.getElementById("function4").innerHTML = hii();
+
+      let hey = " " ;
+      hey = (a)  => "hello " + a;
+      document.getElementById("function4").innerHTML = hey("niraj jambucha");
+
+    </script>
+  </body>
+</html>

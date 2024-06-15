@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><li>javascript Array</li></h1>
+    <hr />
+    <h2><li>Array and new new Array</li></h2>
+    <p id="arry"></p>
+    <hr />
+    <h2><li>null array store deta</li></h2>
+    <p id="arry1"></p>
+    <p id="arry2"></p>
+    <hr />
+    <h2><li>change</li></h2>
+    <p id="arry3"></p>
+    <p id="arry4"></p>
+    <hr />
+    <h2><li>push</li></h2>
+    <p id="arry5"></p>
+    <p id="arry6"></p>
+    <hr />
+    <h2><li>lenght</li></h2>
+    <p id="arry7"></p>
+    <hr />
+    <h2><li>get first element</li></h2>
+    <p id="arry8"></p>
+    <hr />
+    <h2><li>get last element</li></h2>
+    <p id="arry9"></p>
+    <hr />
+    <h2><li>forloop</li></h2>
+    <p id="arry10"></p>
+    <hr />
+    <h2><li>foreach()</li></h2>
+    <p id="arry11"></p>
+    <hr />
+    <h2><li>foreach() in function()</li></h2>
+    <p id="arry12"></p>
+    <hr />
+    <h2><li>ol in li</li></h2>
+    <p id="arry13"></p>
+    <hr />
+    <script>
+      // Array and new new Arra
+      // let name1 = ["niraj","twisa","monika","janvi"];
+      // or
+      let name2 = new Array("niraj", "twisa", "monika", "janvi");
+      // document.getElementById("arry").innerHTML = name1;
+      document.getElementById("arry").innerHTML = name2;
+
+      // null array store deta
+      let name3 = [];
+      name3[0] = "niraj ";
+      name3[1] = "jambucha ";
+      name3[2] = "09.06 ";
+      name3[3] = "18 ";
+      document.getElementById("arry1").innerHTML = name3;
+      document.getElementById("arry2").innerHTML = name3[0];
+
+      // change
+      name3[0] = "nilo";
+      document.getElementById("arry3").innerHTML = name3;
+      document.getElementById("arry4").innerHTML = name3[0];
+
+      // push
+      name3.push("b.c.a first your");
+      document.getElementById("arry5").innerHTML = name3;
+      document.getElementById("arry6").innerHTML = name3[4];
+
+      // lenght
+      let name4 = ["niraj", "twisa", "monika", "janvi"];
+      document.getElementById("arry7").innerHTML = name4.length;
+
+      // get first element
+      let name5 = name4[0];
+      document.getElementById("arry8").innerHTML = name5;
+
+      // get last element
+      let name6 = name4[name4.length - 1];
+      document.getElementById("arry9").innerHTML = name6;
+
+      // forloop
+      let name7 = ["niraj", "twisa", "monika", "janvi"];
+      let namelen = name7.length;
+      let text = " ";
+      for (let i = 0; i < namelen; i++) {
+        //   text += [i] + "<br>"
+        text += name7[i] + "<br>";
+      }
+      document.getElementById("arry10").innerHTML = text;
+
+      // foreach()
+      let name8 = ["niraj", "twisa", "monika", "janvi"];
+      let text1 = " ";
+      name8.forEach(hello);
+      document.getElementById("arry11").innerHTML = text1;
+      function hello(v) {
+        text1 += v + "<br>";
+      }
+
+      //foreach() in function()
+      let name9 = ["niraj", "twisa", "monika", "janvi"];
+      let text2 = " ";
+      name9.forEach(function (a) {
+        text2 += a + "<br>";
+      });
+      document.getElementById("arry12").innerHTML = text2;
+
+      // ol in li
+      let name10 = ["niraj", "twisa", "monika", "janvi"];
+      let text3 = "<ol>";
+      name10.forEach(hello1);
+      let text4 = "</ol>";
+      document.getElementById("arry13").innerHTML = text3;
+      function hello1(v) {
+        text3 += "<li>" + v + "</li>";
+      }
+    </script>
+
+    <h1><li>array object</li></h1>
+    <hr />
+    <h2><li>join = elemment in joning with (-)</li></h2>
+    <p id="arry14"></p>
+    <p id="arry15"></p>
+    <hr />
+    <h2><li>pop = last eliment removed</li></h2>
+    <p id="arry16"></p>
+    <p id="arry17"></p>
+    <hr />
+    <h2><li>push = last eliment add</li></h2>
+    <p id="arry18"></p>
+    <p id="arry19"></p>
+    <hr />
+    <h2><li>shift = first eliment removed</li></h2>
+    <p id="arry20"></p>
+    <p id="arry21"></p>
+    <hr />
+    <h2><li>unshift = first eliment add</li></h2>
+    <p id="arry22"></p>
+    <p id="arry23"></p>
+    <hr />
+    <h2><li>chenge</li></h2>
+    <p id="arry24"></p>
+    <p id="arry25"></p>
+    <hr />
+    <h2><li>delete</li></h2>
+    <p id="arry26"></p>
+    <p id="arry27"></p>
+    <hr />
+    <h2><li>concat()</li></h2>
+    <p id="arry28"></p>
+    <p id="arry29"></p>
+    <hr />
+    <h2><li>flat()</li></h2>
+    <p id="arry30"></p>
+    <hr />
+    <h2><li>slice = removed</li></h2>
+    <p id="arry31"></p>
+    <hr />
+    <h2><li>splice = removed</li></h2>
+    <p id="arry32"></p>
+    <hr />
+    <h2><li>splice = add</li></h2>
+    <p id="arry33"></p>
+    <hr />
+    <h2><li>sort</li></h2>
+    <p id="arry34"></p>
+    <hr />
+    <h2><li>reverse</li></h2>
+    <p id="arry35"></p>
+    <hr />
+    <h1><li>intration - foreach ()</li></h1>
+    <hr />
+    <h2><li>map</li></h2>
+    <p id="arry36"></p>
+    <p id="arry37"></p>
+    <hr />
+    <h2><li>filter = 18 up to new arry</li></h2>
+    <p id="arry38"></p>
+    <hr />
+    <h2><li>reduce = all arry sum</li></h2>
+    <p id="arry39"></p>
+    <p id="arry40"></p>
+    <hr />
+    <h2><li>some = 18 up to true condition</li></h2>
+    <p id="arry41"></p>
+    <hr />
+    <h2><li>every = 18 up to all element true condition</li></h2>
+    <p id="arry42"></p>
+    <hr />
+    <h2><li>Array.isArray = is true condition</li></h2>
+    <p id="arry43"></p>
+    <hr />
+    <h2><li>find = 18 up to one condition</li></h2>
+    <p id="arry44"></p>
+    <hr />
+    <h2><li>keys = show the index value in ( of )</li></h2>
+    <p id="arry45"></p>
+    <hr />
+    <h2><li>entries = show the index value and arry value in ( of )</li></h2>
+    <p id="arry46"></p>
+    <hr />
+    <h2><li>includes</li></h2>
+    <p id="arry47"></p>
+    <hr />
+    <h2><li>arry in object</li></h2>
+    <p id="arry48"></p>
+    <h2><li>arry in object for loop</li></h2>
+    <p id="arry49"></p>
+    <hr />
+    <h2><li>multidimesional arry</li></h2>
+    <p id="arry50"></p>
+    <h2><li>multidimesional arry in for loop</li></h2>
+    <p id="arry51"></p>
+    <script>
+      //lenght
+      //tostring
+
+      // join  elemment in joning with (-)
+      let name11 = ["niraj", "twisa", "monika", "janvi"];
+      let name12 = name11.join("-");
+      document.getElementById("arry14").innerHTML = name11;
+      document.getElementById("arry15").innerHTML = name12;
+
+      // pop last eliment removed
+      document.getElementById("arry16").innerHTML = name11;
+      name11.pop();
+      document.getElementById("arry17").innerHTML = name11;
+
+      // push last eliment add no
+      document.getElementById("arry18").innerHTML = name11;
+      name11.push("jambucha");
+      document.getElementById("arry19").innerHTML = name11;
+
+      // shift first eliment removed
+      document.getElementById("arry20").innerHTML = name11;
+      name11.shift();
+      document.getElementById("arry21").innerHTML = name11;
+
+      // unshift first eliment add
+      document.getElementById("arry22").innerHTML = name11;
+      name11.unshift("jambucha");
+      document.getElementById("arry23").innerHTML = name11;
+
+      // chenge
+      document.getElementById("arry24").innerHTML = name11;
+      name11[2] = "niraj";
+      document.getElementById("arry25").innerHTML = name11;
+
+      // delete
+      document.getElementById("arry26").innerHTML = name11;
+      delete name11[1];
+      document.getElementById("arry27").innerHTML = name11;
+
+      // concat()
+      let n1 = ["hello ", "niraj "];
+      let n2 = ["hyy ", "niraj "];
+      let x = name11.concat(n1, n2);
+      document.getElementById("arry28").innerHTML = name11;
+      document.getElementById("arry29").innerHTML = x;
+
+      // flat()
+      let f1 = [
+        [10, 20],
+        [30, 40],
+        [50, 60],
+      ];
+      let f2 = f1.flat();
+      document.getElementById("arry30").innerHTML = f2;
+
+      // slice removed
+      let name13 = ["niraj", "twisa", "monika", "janvi"];
+      // let n = name13.slice(1)
+      let n = name13.slice(1, 3);
+      document.getElementById("arry31").innerHTML = n;
+
+      // splice removed
+      let name14 = ["niraj", "twisa", "monika", "janvi"];
+      // let n = name13.slice(1)
+      let n3 = name13.splice(1, 2);
+      document.getElementById("arry32").innerHTML = n3;
+
+      // splice add
+      name14.splice(1, 2, "hello", "hey");
+      document.getElementById("arry33").innerHTML = name14;
+
+      // sort
+      let name15 = ["niraj", "twisa", "monika", "janvi"];
+      name15.sort();
+      document.getElementById("arry34").innerHTML = name15;
+
+      // reverse
+      let name16 = ["niraj", "twisa", "monika", "janvi"];
+      name16.reverse();
+      document.getElementById("arry35").innerHTML = name16;
+
+      //map
+      let n4 = [10, 2, 15, 12, 8, 30];
+      let n5 = n4.map(mymap);
+      document.getElementById("arry36").innerHTML = n5;
+      function mymap(v, i, a) {
+        return v * 5;
+      }
+
+      let n6 = [
+        { fname: "niraj", age: "18" },
+        { fname: "twisa", age: "20" },
+        { fname: "monika", age: "21" },
+      ];
+      let n7 = n6.map(mymap1);
+      // let n7 = n6[0]["fname"] + n6[0]["age"];
+      document.getElementById("arry37").innerHTML = n7;
+      function mymap1(x) {
+        return x.fname + " " + x.age;
+      }
+
+      // filter 18 up to new arry
+      let n8 = [100, 2, 15, 12, 8, 30];
+      let n9 = n8.filter(myfilter);
+      document.getElementById("arry38").innerHTML = n9;
+      function myfilter(v, i, a) {
+        return v > 18;
+      }
+
+      // reduce all arry sum
+      let n10 = [100, 2, 15, 12, 8, 30];
+      let n11 = n10.reduce(myreduce);
+      document.getElementById("arry39").innerHTML = n11;
+      function myreduce(total, v) {
+        return total + v;
+      }
+
+      let n12 = [100, 2, 15, 12, 8, 30];
+      let n13 = n12.reduce(myreduce1, 100);
+      document.getElementById("arry40").innerHTML = n13;
+      function myreduce1(total, v) {
+        return total + v;
+      }
+
+      // some 18 up to element true condition
+      let n14 = [10, 2, 15, 12, 8, 30];
+      let n15 = n14.some(mysome);
+      document.getElementById("arry41").innerHTML = n15;
+      function mysome(v) {
+        return v > 18;
+      }
+
+      // every 18 up to all element true condition
+      let n16 = [102, 233, 154, 124, 84, 30];
+      let n17 = n16.every(myevery);
+      document.getElementById("arry42").innerHTML = n17;
+      function myevery(v) {
+        return v > 18;
+      }
+
+      // Array.isArray is true condition
+      let c = [10, 2, 15, 12, 8, 30];
+      // let c =  {fname:"niraj",age:"18"};
+      let c1 = Array.isArray(c);
+      document.getElementById("arry43").innerHTML = c1;
+
+      // find 18 up to one condition
+      let n18 = [10, 2, 1, 12, 8, 32];
+      let n19 = n18.find(myfind);
+      document.getElementById("arry44").innerHTML = n19;
+      function myfind(v) {
+        return v > 18;
+      }
+
+      // keys = show the index value in ( of )
+      let n20 = ["niraj", "twisa", "monika", "janvi"];
+      let n21 = n20.keys();
+      let text5 = " ";
+      for (let x of n21) {
+        text5 += "hello  " + x + "<br>";
+      }
+      document.getElementById("arry45").innerHTML = text5;
+
+      // entries = show the index value and arry value in ( of )
+      let n22 = ["niraj", "twisa", "monika", "janvi"];
+      let n23 = n22.entries();
+      let text6 = " ";
+      for (let x of n23) {
+        text6 += "hello  " + x + "<br>";
+      }
+      document.getElementById("arry46").innerHTML = text6;
+
+      // includes
+      document.getElementById("arry47").innerHTML = n22.includes("niraj");
+
+      // arry in object
+      let n24 = [
+        { fname: "niraj", age: "18" },
+        { fname: "twisa", age: "19" },
+        { fname: "monika", age: "20" },
+        { fname: "janvi", age: "21" },
+      ];
+      document.getElementById("arry48").innerHTML =
+        "my name is " + n24[0]["fname"] + "<br>" + "my age is" + n24[0]["age"];
+
+      // arry in object for loop
+      for (let a = 0; a < n24.length; a++) {
+        let n25 =
+          "my name is" + n24[0].fname + "<br>" + "my age is" + n24[0].age;
+        document.getElementById("arry49").innerHTML = n25;
+      }
+
+      // multidimesional arry
+      let n26 = [
+        ["abc", 10, "bvm", 20],
+        ["abc", 30, "bvm", 40],
+        ["niraj", 9, "jambucha", 6],
+        ["abc", 70, "bvm", 80],
+      ];
+      document.getElementById("arry50").innerHTML = n26[2][2];
+
+      //  multidimesional arry in for loop
+      let n27 = " ";
+      for (let a = 0; a < n26.length; a++) {
+        // n27 += n26[0]
+        for (b = 0; b < n26.length; b++) {
+          n27 += n26[a][b] + "<br> <br>";
+        }
+        document.getElementById("arry51").innerHTML = n27;
+      }
+    </script>
+  </body>
+</html>

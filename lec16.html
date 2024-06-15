@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>jquery</h1>
+    <hr>
+    <h2><li>getElementById ( ) </li></h2>   
+    <p id="text">niraj jambucha</p>
+    <p id="ab1"></p>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function (){
+            var abc = $("#text");
+            $("#ab1").text("my name is :- " + abc[0].innerHTML)
+        });
+    </script>
+
+    <h2><li>getElementsByTagName</li></h2>
+    <p id="text1">niraj jambucha</p>
+    <p id="ab2"></p>
+    <script>
+        $(document).ready(function () {
+            var paragraphs = document.getElementsByTagName("p");
+            var abc1 = paragraphs[2];
+            ab2.innerHTML = "my name is :- " + abc1.innerHTML;
+        });
+    </script>
+
+    <h2><li>getElementsByClassName</li></h2>
+    <p class="text2">hi niraj</p>
+    <p class="ab3"></p>
+    <script>
+        $(document).ready(function () {
+            var textElements = document.getElementsByClassName("text2");
+            var ab1Elements = document.getElementsByClassName("ab3");
+            var abc = textElements[0];
+            var ab1 = ab1Elements[0];
+            ab1.innerHTML = " hello " + abc.innerHTML;
+        });
+    </script>
+
+    <h2><li>ElementsBycss selector / querySelector</li></h2>
+    <p class="text3">niraj</p>
+    <p class="ab4"></p>
+    <script>
+        $(document).ready(function () {
+            var abc = document.querySelector(".text3");
+            var ab4 = document.querySelector(".ab4");
+            ab4.innerHTML = " hello " + abc.innerHTML;
+        });
+    </script>
+
+    <h2><li>Set text</li></h2>
+    <p id="ab5"> hello niraj</p>
+    <script>
+       $(document).ready(function () {
+            var abs = $ ("#ab5");
+            // abs.text("hello niraj")
+        });
+    </script>
+
+    <h2><li>get text</li></h2>
+    <p id="ab6"> hyy niraj</p>
+    <p id="ab7"></p>
+    <script>
+       $(document).ready(function () {
+            var abs = $ ("#ab6").text();
+            $("#ab7").text(abs)
+        });
+    </script>
+
+    <h2><li>Set HTML</li></h2>
+    <p id="ab8"> jambucha</p>
+    <script>
+        $(document).ready(function () {
+            $("#ab8").html("<h2>hey niraj</h2>")
+        });
+    </script>
+
+    <h2><li>get HTML / hide / show</li></h2>
+    <p id="ab9"> hyy niraj</p>
+    <p id="ab10"> hyy niraj</p>
+    <script>
+       $(document).ready(function () {
+            var abs1 = $ ("#ab9").html();
+            $("#ab10").html(abs1);
+            $("#ab10").hide();
+            $("#ab10").show();
+        });
+    </script>
+
+    <h2><li>css elements / remove</li></h2>
+    <p id="css"> hy niraj</p>
+    <script>
+       $(document).ready(function () {
+            $("#css").css("font-size","30px");
+            $("#css").css("color","red");
+            // $("#ab10").remove();
+        });
+    </script>
+
+    <h2><li>onmousedown and onmouseup / click / dblclick / hover / focus / blur</li></h2>
+    <h2><li>all eliment css ( on ) mouseenter / mouseleave / click</li></h2>
+    <p>Lorem, ipsum dolor.</p>
+    <p>Lorem, ipsum dolor.</p>
+    <p>Lorem, ipsum dolor.</p>
+    <p id="lorm" contenteditable="true">Lorem, ipsum dolor.</p>
+    <script>
+         $(document).ready(function () {
+        //   $('p').click(function (){
+        //     $ (this).hide();
+        //   })
+        //   $('p').dblclick(function (){
+        //     $ (this).hide();
+        //   })
+        //  $('#lorm').mousedown(function (){
+        //    $("#lorm").css("color", "red");
+        // });
+        //   $('#lorm').mouseup(function (){
+        //     $("#lorm").css("color", "green");
+        // });
+        // $('#lorm').hover(function (){
+        //     $("#lorm").css("color", "blue");
+        // });
+        $('#lorm').focus(function() {
+                $("#lorm").css("color", "blue");
+            });
+        $('#lorm').blur(function() {
+            $("#lorm").css("color", "red");
+        });
+        });
+
+        $("p").on({
+            mouseenter : function (){
+                $(this).css("background-color" , "red")
+            },
+            // mouseleave: function() {
+            // $(this).css("background-color", "green");
+            // },
+            click : function() {
+            $(this).css("background-color", "yellow");
+            },
+        });
+    </script>
+
+
+</script>
+</body>
+</html>

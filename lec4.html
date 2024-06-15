@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><li>for</li></h1>
+    <p id="for"></p>
+
+    <script>
+      let name = ["niraj", "niraj", "niraj", "niraj", "jambucha"];
+      let len = name.length;
+      let name_text = " ";
+      //  for(let i = 0; i < len; i++){
+      //      name_text += "my name is " + name[i]+ "<br>";
+      //  }
+      //  let  i;
+      //  for( i = 0; i < len; i++){
+      //      name_text += "my name is " + name[i]+ "<br>";
+      //  }
+      let i;
+      for (i = 0; i < len; ) {
+        name_text += "my name is " + name[i] + "<br>";
+        i++;
+      }
+
+      document.getElementById("for").innerHTML = name_text;
+    </script>
+
+    <hr />
+
+    <p id="for1"></p>
+    <script>
+      //  let num = prompt("plese enter this number")
+      //  let number = ' ' ;
+      //  for(let i = 1; i <= num; i++){
+      //      number += "this number is :- " + [i] +"<br>";
+      //  }
+      //  document.getElementById("for1").innerHTML = number;
+    </script>
+
+    <hr />
+
+    <h1>petarn (*)</h1>
+    <input type="text" id="add" />
+    <button onclick="star()">click</button>
+    <p id="show"></p>
+    <script>
+      function star() {
+        let a1 = document.getElementById("add").value;
+
+        let b1 = " ";
+        for ($i = 1; $i <= a1; $i++) {
+          // b1 += "*";
+          for ($j = $i; $j <= a1; $j++) {
+            b1 += "😎";
+          }
+          b1 += "<br />";
+        }
+
+        document.getElementById("show").innerHTML = b1;
+      }
+    </script>
+
+    <hr />
+
+    <h1><li>for in / for of</li></h1>
+    <pre>
+    object = for in  
+    arry = for of
+           for loop
+           for of
+           foreach()
+  </pre
+    >
+
+    <hr />
+
+    <h1><li>for in</li></h1>
+    <p id="for-in"></p>
+    <script>
+      let a = {
+        fname: "niraj",
+        lname: "jambucha",
+        id: 10,
+      };
+      let text = " ";
+      for (let x in a) {
+        // text += [x] + "<br>";     // in
+        // text += a[x] + "<br>";   //  of
+        text += "my" + " " + [x] + " is " + a[x] + "<br>";
+      }
+      document.getElementById("for-in").innerHTML = text;
+    </script>
+
+    <hr />
+
+    <p id="for-in1"></p>
+    <script>
+      let a1 = [10, 20, 30, 40, 50];
+      let text1 = " ";
+      for (let x in a1) {
+        // text1 += [x] + "<br>";        // in
+        text1 += a1[x] + "<br>"; //  of
+      }
+      document.getElementById("for-in1").innerHTML = text1;
+    </script>
+
+    <hr />
+
+    <h2><li>foreach()</li></h2>
+    <p id="for-in2"></p>
+    <script>
+      let ary = [10, 20, 30, 40, 50];
+      let text2 = " ";
+      ary.forEach(myary);
+      function myary(value, index, arry) {
+        // text2 += value + "<br>";
+        // text2 += index + "<br>";
+        text2 += arry + "<br>";
+      }
+      document.getElementById("for-in2").innerHTML = text2;
+    </script>
+
+    <hr />
+
+    <h2><li>for of</li></h2>
+    <p id="for-of"></p>
+    <hr />
+    <p id="for-of1"></p>
+    <script>
+      let name1 = ["niraj", "mona", "janvi", "twisu"];
+      let n = " ";
+      for (let w of name1) {
+        // n += " my name is " + [w] + "<br>" ;
+        n += " my name is :- " + name1[w] + "<br>";
+      }
+      document.getElementById("for-of").innerHTML = n;
+
+      let b = "abcodig";
+      let l = " ";
+      for (let v of b) {
+        l += [v] + "<br>";
+      }
+      document.getElementById("for-of1").innerHTML = l;
+    </script>
+
+    <hr />
+
+    <h2><li>while lop</li></h2>
+    <p id="while"></p>
+    <script>
+      let d = 0;
+      let abc = " ";
+      while (d <= 10) {
+        abc += "my number is :-" + d + "<br>";
+        d++;
+      }
+      document.getElementById("while").innerHTML = abc;
+    </script>
+
+    <hr />
+
+    <h2><li>do lop</li></h2>
+    <p id="do"></p>
+    <script>
+      let d1 = 0;
+      let text3 = " ";
+      do {
+        text3 += "my number is :-" + d1 + "<br>";
+        d1++;
+      } while (d1 <= 10);
+      document.getElementById("do").innerHTML = text3;
+    </script>
+  </body>
+</html>

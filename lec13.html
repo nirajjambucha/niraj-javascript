@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>localStorage</h1>
+    <hr>
+    <p id="local"></p>
+    <p id="local1"></p>
+    <script>
+        let key = prompt("plase enter your key");
+        let value = prompt ("plase enter your value");
+
+        localStorage.setItem(key,value)
+        document.getElementById("local").innerHTML = "your key is " + key + "and your value is " + localStorage.getItem(key);
+        // document.getElementById("local1").innerHTML = "your key is " + key + "and your value is " + localStorage.getItem(0);
+
+        if(key == "name" || key == "monika"){
+            localStorage.removeItem(key);
+        }if(key == 0){
+            localStorage.clear();
+        };
+    </script>
+        
+</body>
+</html>

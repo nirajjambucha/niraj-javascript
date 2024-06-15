@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><li>javascripte</li></h1>
+    <hr />
+    <h2><li>javascripte is event base programming language</li></h2>
+    <hr />
+
+    <h2><li>client side scripte</li></h2>
+    <h3><li>javascripte</li></h3>
+    <h3><li>vb script</li></h3>
+    <hr />
+    <h2><li>server side scripte</li></h2>
+    <h3><li>php</li></h3>
+    <h3><li>.net</li></h3>
+    <h3><li>pathon</li></h3>
+    <hr />
+
+    <h1><li>add in javascript</li></h1>
+    <h2><li>inline</li></h2>
+    <h3><li>-inside head tag</li></h3>
+    <h3><li>-inside body tag</li></h3>
+    <h2><li>external</li></h2>
+    <h3><li>-inside head tag</li></h3>
+    <h3><li>-inside body tag</li></h3>
+    <!-- <script src="path of file"></script> -->
+    <h3><li>javascript file extension = .js</li></h3>
+    <hr />
+
+    <h1><li>javascript output</li></h1>
+    <h2><li>innerhtml = property defines the html content</li></h2>
+    <h2><li>Document.write() = testing purposes</li></h2>
+    <h2><li>Document.alert() = deta display</li></h2>
+    <h2><li>alert</li></h2>
+    <h2><li>console.log() = debugging purposes</li></h2>
+    <h2><li>window.print()</li></h2>
+
+    <p id="test"></p>
+    <script>
+      document.getElementById("test").innerHTML = "hello niraj";
+      document.write("hyyy niraj");
+      //  window.alert("welcome niraj");
+      //   alert("hyyy niraj")
+      //  console.log("byy niraj");
+      // print();
+    </script>
+    <hr />
+
+    <h1><li>variables</li></h1>
+    <h2><li>automatically</li></h2>
+    <h2><li>var</li></h2>
+    <h2><li>lat = variables defined with let can not be redeclard</li></h2>
+    <h2>
+      <li>const = variables defined with conset cannet not be redeclard</li>
+    </h2>
+    <hr />
+
+    <h1><li>var</li></h1>
+    <p id="var"></p>
+    <h3>consol.log(2)</h3>
+    <hr />
+
+    <h1><li>let</li></h1>
+    <h3>consol.log(2)</h3>
+    <hr />
+
+    <h1><li>const</li></h1>
+    <h3>consol.log(1)</h3>
+    <hr />
+
+    <script>
+      // how to create variables
+      var x;
+      let y;
+      // how  to use  variables
+      x = 10; //declare variables
+      y = 20; //assign the variables
+      let z = x + y;
+      document.getElementById("var").innerHTML = z;
+      // hyphens first-name
+      // first_name FirstName firstname
+
+      //  var k = 10;
+      {
+        var k = 20;
+        console.log(k);
+      }
+      // console.log(k)
+
+      var ab = 10;
+      var ab = 20;
+      ab = 30;
+      console.log(ab);
+
+      let ab1 = 52;
+      ab1 = 25;
+      console.log(ab1);
+
+      //  let n = 10;
+      {
+        let n = 10;
+        console.log(n);
+      }
+      //  console.log(n);
+
+      const abcd = 29;
+      // abcd = 29 ;
+      console.log(abcd);
+    </script>
+
+    <h1><li>javascript data types</li></h1>
+    <h2><li>string</li></h2>
+    <h2><li>number</li></h2>
+    <h2><li>bigint</li></h2>
+    <h2><li>boolean</li></h2>
+    <h2><li>boolean</li></h2>
+    <h2><li>undefined</li></h2>
+    <h2><li>object</li></h2>
+    <h2><li>array</li></h2>
+    <hr />
+
+    <h2><li>string</li></h2>
+    <p id="string"></p>
+    <p id="string1"></p>
+    <p id="string2"></p>
+    <p id="string3"></p>
+    <p id="string4"></p>
+    <script>
+      let string = "hello";
+      document.getElementById("string").innerHTML =
+        "welcome niraj" + " " + string + " " + typeof string;
+      let string1 = "hyy 'niraj'";
+      document.getElementById("string1").innerHTML =
+        "welcome niraj" + " " + string1 + " " + typeof string1;
+      let string2 = 'hyy "niraj"';
+      document.getElementById("string2").innerHTML =
+        "welcome niraj" + " " + string2 + " " + typeof string2;
+      let string3 = 10 + 20 + " " + "number";
+      document.getElementById("string3").innerHTML =
+        "welcome niraj" + " " + string3 + " " + typeof string3;
+      let string4 = "number" + 10 + 20;
+      document.getElementById("string4").innerHTML =
+        "welcome niraj" + " " + string4 + " " + typeof string4;
+    </script>
+    <hr />
+
+    <h2><li>number</li></h2>
+    <p id="number"></p>
+    <p id="number1"></p>
+    <script>
+      let number = 10;
+      let number1 = 5.29;
+      document.getElementById("number").innerHTML =
+        number + " " + typeof number;
+      document.getElementById("number1").innerHTML =
+        number1 + " " + typeof number1;
+    </script>
+    <hr />
+
+    <h2><li>bigint</li></h2>
+    <p id="bigint"></p>
+    <p id="bigint1"></p>
+    <script>
+      let bigint = 123456789012345678901234567890;
+      document.getElementById("bigint").innerHTML =
+        bigint + " " + typeof bigint;
+
+      let bigint1 = BigInt(123456789012345678901234567890);
+      document.getElementById("bigint1").innerHTML =
+        bigint1 + " " + typeof bigint1;
+    </script>
+    <hr />
+
+    <h2><li>boolean</li></h2>
+    <p id="boolean"></p>
+    <script>
+      let boolean = 10;
+      let boolean1 = 10;
+      let boolean2 = boolean == boolean1;
+      document.getElementById("boolean").innerHTML =
+        boolean2 + " " + typeof boolean2;
+    </script>
+    <hr />
+
+    <h2><li>undifined</li></h2>
+    <p id="undifined"></p>
+    <script>
+      let undifined;
+      document.getElementById("undifined").innerHTML =
+        undifined + " " + typeof undifined;
+    </script>
+    <hr />
+
+    <h2><li>data object</li></h2>
+    <p id="data"></p>
+    <script>
+      let data = new Date();
+      document.getElementById("data").innerHTML = data + " " + typeof data;
+    </script>
+    <hr />
+
+    <h2><li>arry</li></h2>
+    <p id="arry"></p>
+    <p id="arry3"></p>
+
+    <h2><li>change</li></h2>
+    <p id="arry1"></p>
+
+    <h2><li>add</li></h2>
+    <p id="arry2"></p>
+    <!-- <p id="arry"></p> -->
+    <script>
+      let arry = ["niraj", "jambucha", "09"];
+      document.getElementById("arry").innerHTML = arry + " " + typeof arry;
+      document.getElementById("arry3").innerHTML = arry[2] + " " + typeof arry;
+
+      //change
+      let arry1 = ["niraj", "niraj", "09"];
+      arry1[0] = "jambucha";
+      document.getElementById("arry1").innerHTML = arry1 + " " + typeof arry1;
+
+      //add
+      let arry2 = ["niraj", "niraj", "09"];
+      arry2.push("niraj", "niraj");
+      document.getElementById("arry2").innerHTML = arry2 + " " + typeof arry2;
+    </script>
+    <hr />
+    <h2><li>object</li></h2>
+    <p id="object"></p>
+
+    <h2><li>change</li></h2>
+    <p id="object1"></p>
+
+    <h2><li>add</li></h2>
+    <p id="object2"></p>
+    <script>
+      let car = { name: "supra", modal: "mk4", color: "black" };
+      document.getElementById("object").innerHTML = car.name + " " + car.modal;
+
+      // change
+      let car1 = { name: "supra", modal: "mk4", color: "black" };
+      car1.modal = "mk5";
+      document.getElementById("object1").innerHTML =
+        car1.name + " " + car1.modal;
+
+      // add
+      let car2 = { name: "supra", modal: "mk4", color: "black" };
+      car2.owner = "niraj";
+      document.getElementById("object2").innerHTML =
+        car2.name + " " + car2.modal + " " + car2.owner;
+    </script>
+    <hr />
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><li>ternary</li></h1>
+    <p id="ternary"></p>
+    <script>
+      let a = 19;
+      a = a > 18 ? "okay" : "not";
+      document.getElementById("ternary").innerHTML = a;
+    </script>
+    <hr />
+    <h1><li>switch statement</li></h1>
+    <p id="switch"></p>
+    <script>
+      // let day = new Date().getDay();
+      let day = 0;
+      let dayname;
+      switch (day) {
+        case 0:
+          dayname = "sunday" + " " + day;
+          break;
+        case 1:
+          dayname = "monday" + " " + day;
+          break;
+        case 2:
+          dayname = "tuesday" + " " + day;
+          break;
+        case 3:
+          dayname = "wednesday" + " " + day;
+          break;
+        case 4:
+          dayname = "thursday" + " " + day;
+          break;
+        case 5:
+          dayname = "friday" + " " + day;
+          break;
+        case 6:
+          dayname = "saturday" + " " + day;
+          break;
+        default:
+          dayname = "this day not found" + day;
+      }
+      document.getElementById("switch").innerHTML = dayname;
+    </script>
+    <hr />
+    <h1><li>get value</li></h1>
+    <p id="p"></p>
+    <input type="text" name="" id="add" />
+    <button onclick="pattern()">click me</button>
+    <script>
+      function pattern() {
+        let get = document.getElementById("add").value;
+        document.getElementById("p").innerHTML = get;
+      }
+    </script>
+    <hr />
+    <h1><li>javascripte for loop</li></h1>
+    <h2><li>for</li></h2>
+    <h2><li>for / in</li></h2>
+    <h2><li>for / off</li></h2>
+    <h2><li>while</li></h2>
+    <h2><li>do / while</li></h2>
+    <hr />
+    <h1><li>for</li></h1>
+    <p id="for">for</p>
+    <script>
+      // let num = 5;
+      let num = prompt("enter this number");
+      let text = " ";
+      for (let i = 1; i <= num; i++) {
+        text += "this number is" + " " + [i] + "<br>";
+      }
+      document.getElementById("for").innerHTML = text;
+    </script>
+    <hr />
+    <h1>
+      <li><ins>for</ins> to the next page (lec4.html) ====== ➡</li>
+    </h1>
+  </body>
+</html>
